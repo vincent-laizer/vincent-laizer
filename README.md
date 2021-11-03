@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @vincent-laizer
-- 👀 I’m interested in c++ programming and android
-- 🌱 I’m currently learning android (kotlin)
+- 👀 I’m interested in c++ programming and android (Kotlin/Java)
+- 🌱 I’m currently learning android (Flutter)
 - 💞️ I’m looking to collaborate on c++, python and android projects
 - 📫 How to reach me vglaizer09@gmail.com +255759640777
 
