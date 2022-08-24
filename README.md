@@ -3,6 +3,7 @@
 - 🌱 I’m currently learning android (Flutter)
 - 💞️ I’m looking to collaborate on c++, python and android projects
 - 📫 How to reach me vglaizer09@gmail.com +255759640777
+- :link: [vincentlaizer.me](https://vincentlaizer.me)
 
 <!---
 vincent-laizer/vincent-laizer is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
