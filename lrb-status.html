@@ -190,32 +190,39 @@
               </div>
             </div>
 
+            <hr class="col-3 col-md-2 mb-5">
+
             <!-- Feedback -->
             <div class="row g-5" id="feedback">
               <div class="col">
                 <h2>Feedback</h2>
                 <p>Tell us your thoughts, your ideas matter to us!</p>
                 <div>
-                  <div class="mb-3">
-                    <label for="phone" class="form-label">
-                      <i class="fa fa-phone mr-2" aria-hidden="true"></i>
-                      Phone
-                    </label>
-                    <input type="text"
-                      class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" placeholder="+255657069774">
-                    <small id="phoneHelp" class="form-text text-muted">Your phone is needed incase of feedback.</small>
-                  </div>
-                  <div class="mb-3">
-                    <label for="comment" class="form-label">
-                      <i class="fa fa-comment mr-2" aria-hidden="true"></i>
-                      Comment
-                    </label>
-                    <textarea class="form-control" name="comment" id="comment" rows="3">
-                    </textarea>
-                  </div>
-                  <div class="d-grid gap-2">
-                    <button type="button" name="submit" id="submit" class="btn btn-theme">Submit</button>
-                  </div>
+                  <form action="https://boomboomboom.pythonanywhere.com/feedback" method="POST" onsubmit="return false" id="feedbackForm">
+                    <div class="mb-3">
+                      <p class="text-danger" id="error"></p>
+                    </div>
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">
+                        <i class="fa fa-phone mr-2" aria-hidden="true"></i>
+                        Phone
+                      </label>
+                      <input type="text"
+                        class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" placeholder="+255657069774" required>
+                      <small id="phoneHelp" class="form-text text-muted">Your phone is needed incase of feedback.</small>
+                    </div>
+                    <div class="mb-3">
+                      <label for="comment" class="form-label">
+                        <i class="fa fa-comment mr-2" aria-hidden="true"></i>
+                        Comment
+                      </label>
+                      <textarea class="form-control" name="comment" id="comment" rows="3" required>
+                      </textarea>
+                    </div>
+                    <div class="d-grid gap-2">
+                      <button type="submit" name="submit" id="submit" class="btn btn-theme">Submit</button>
+                    </div>
+                  </form>
                 </div>
           </main>
         </div>
@@ -282,5 +289,26 @@
   <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="../assets/js/google-maps.js"></script>
   <script src="../assets/js/minibar-virtual.js"></script>
+
+  <!-- submit feedback with jquery -->
+  <script>
+    $(document).ready(function(){
+      $("#feedbackForm").submit(function (param) { 
+        // send feedback to server
+        var url = "https://boomboomboom.pythonanywhere.com/feedback?feedback="+$("#comment").val()+" "+$("#phone").val();
+        $.post(url, function (data, status) { 
+          if(data["response"] === "thank you!"){
+            $("#error").text("Thank you for your feedback!");
+          }
+          else{
+            $("#error").text("An Error. Please try again!");
+          }
+         }).fail(function () { 
+          $("#error").text("Failed to send. Please try again!");
+          });
+       });
+    });
+  </script>
+
 </body>
 </html>
