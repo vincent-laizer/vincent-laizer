@@ -199,7 +199,7 @@
                 <h2>Feedback</h2>
                 <p>Tell us your thoughts, your ideas matter to us!</p>
                 <div>
-                  <form action="https://boomboomboom.pythonanywhere.com/feedback" method="POST" onsubmit="return false" id="feedbackForm">
+                  <form action="https://api.edenconsult.co.tz/lrb/feedback" method="POST" onsubmit="return false" id="feedbackForm">
                     <div class="mb-3">
                       <p class="text-danger" id="error"></p>
                     </div>
@@ -217,8 +217,7 @@
                         <i class="fa fa-comment mr-2" aria-hidden="true"></i>
                         Comment
                       </label>
-                      <textarea class="form-control" name="comment" id="comment" rows="3" required>
-                      </textarea>
+                      <textarea class="form-control" name="comment" id="comment" rows="3" required></textarea>
                     </div>
                     <div class="d-grid gap-2">
                       <button type="submit" name="submit" id="submit" class="btn btn-theme">Submit</button>
@@ -296,7 +295,7 @@
     $(document).ready(function(){
       $("#feedbackForm").submit(function (param) { 
         // send feedback to server
-        var url = "https://boomboomboom.pythonanywhere.com/feedback?feedback="+$("#comment").val()+" "+$("#phone").val();
+        var url = "https://api.edenconsult.co.tz/lrb/feedback?feedback="+$("#comment").val()+" "+$("#phone").val();
         $.post(url, function (data, status) { 
           if(data["response"] === "thank you!"){
             $("#error").text("Thank you for your feedback!");
