@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSEE 2023 Simiyu School Positions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="h1 mt-2">CSEE 2023 Simiyu School Positions</h1>
+        <input type="text" class="form-control mt-3" placeholder="search schools by name" id="search">
+        <div class="table-responsive">
+            <table id="listContainer" class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>GPA</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div>
+            <h4>Developed By: <a href="https://vincent-laizer.github.io/vincent-laizer/">Vicent Laizer</a></h4>
+        </div>
+    </div>
+    <script>
+        const dataArray = [
+            {
+                "school_name": "ST. ALOYSIUS GONZAGA BOYS' SEMINARY",
+                "school_number": "S5237",
+                "region": "SIMIYU",
+                "gpa": "1.3344",
+                "position": 1
+            },
+            {
+                "school_name": "KUSEKWA MEMORIAL",
+                "school_number": "S5375",
+                "region": "SIMIYU",
+                "gpa": "1.8779",
+                "position": 2
+            },
+            {
+                "school_name": "SIMBA WA YUDA",
+                "school_number": "S3886",
+                "region": "SIMIYU",
+                "gpa": "2.0372",
+                "position": 3
+            },
+            {
+                "school_name": "BUPANDAGILA ADVENTIST",
+                "school_number": "S0439",
+                "region": "SIMIYU",
+                "gpa": "2.0512",
+                "position": 4
+            },
+            {
+                "school_name": "MWAMAPALALA",
+                "school_number": "S0658",
+                "region": "SIMIYU",
+                "gpa": "2.1678",
+                "position": 5
+            },
+            {
+                "school_name": "LITTLE SISTERS OF ST. FRANCIS",
+                "school_number": "S5986",
+                "region": "SIMIYU",
+                "gpa": "2.2107",
+                "position": 6
+            },
+            {
+                "school_name": "DEKAPOLI",
+                "school_number": "S5368",
+                "region": "SIMIYU",
+                "gpa": "2.3321",
+                "position": 7
+            },
+            {
+                "school_name": "NGULYATI",
+                "school_number": "S5239",
+                "region": "SIMIYU",
+                "gpa": "2.4077",
+                "position": 8
+            },
+            {
+                "school_name": "LALAGO",
+                "school_number": "S0519",
+                "region": "SIMIYU",
+                "gpa": "2.5348",
+                "position": 9
+            },
+            {
+                "school_name": "WINAM CAREER",
+                "school_number": "S3777",
+                "region": "SIMIYU",
+                "gpa": "2.6022",
+                "position": 10
+            },
+            {
+                "school_name": "KILABELA",
+                "school_number": "S2977",
+                "region": "SIMIYU",
+                "gpa": "2.6141",
+                "position": 11
+            },
+            {
+                "school_name": "NG'HOBOKO",
+                "school_number": "S2543",
+                "region": "SIMIYU",
+                "gpa": "2.7346",
+                "position": 12
+            },
+            {
+                "school_name": "BADI",
+                "school_number": "S3341",
+                "region": "SIMIYU",
+                "gpa": "2.7827",
+                "position": 13
+            },
+            {
+                "school_name": "GAMBOSI",
+                "school_number": "S5837",
+                "region": "SIMIYU",
+                "gpa": "3.0118",
+                "position": 14
+            },
+            {
+                "school_name": "IGAGANULWA",
+                "school_number": "S2974",
+                "region": "SIMIYU",
+                "gpa": "3.0313",
+                "position": 15
+            },
+            {
+                "school_name": "ITINJE",
+                "school_number": "S2621",
+                "region": "SIMIYU",
+                "gpa": "3.0455",
+                "position": 16
+            },
+            {
+                "school_name": "MALAMPAKA",
+                "school_number": "S0826",
+                "region": "SIMIYU",
+                "gpa": "3.0541",
+                "position": 17
+            },
+            {
+                "school_name": "MWANDOYA",
+                "school_number": "S0935",
+                "region": "SIMIYU",
+                "gpa": "3.1193",
+                "position": 18
+            },
+            {
+                "school_name": "BUKINGWAMINZI",
+                "school_number": "S2982",
+                "region": "SIMIYU",
+                "gpa": "3.166",
+                "position": 19
+            },
+            {
+                "school_name": "MASANZA",
+                "school_number": "S5668",
+                "region": "SIMIYU",
+                "gpa": "3.1924",
+                "position": 20
+            },
+            {
+                "school_name": "WEST SERENGETI",
+                "school_number": "S4830",
+                "region": "SIMIYU",
+                "gpa": "3.1973",
+                "position": 21
+            },
+            {
+                "school_name": "JIJA",
+                "school_number": "S3343",
+                "region": "SIMIYU",
+                "gpa": "3.2095",
+                "position": 22
+            },
+            {
+                "school_name": "BARIADI",
+                "school_number": "S0712",
+                "region": "SIMIYU",
+                "gpa": "3.2365",
+                "position": 23
+            },
+            {
+                "school_name": "LAMADI",
+                "school_number": "S2244",
+                "region": "SIMIYU",
+                "gpa": "3.2525",
+                "position": 24
+            },
+            {
+                "school_name": "KANADI",
+                "school_number": "S0885",
+                "region": "SIMIYU",
+                "gpa": "3.272",
+                "position": 25
+            },
+            {
+                "school_name": "NYALANJA",
+                "school_number": "S2105",
+                "region": "SIMIYU",
+                "gpa": "3.2928",
+                "position": 26
+            },
+            {
+                "school_name": "MISWAKI",
+                "school_number": "S2964",
+                "region": "SIMIYU",
+                "gpa": "3.3094",
+                "position": 27
+            },
+            {
+                "school_name": "MWAMISHALI",
+                "school_number": "S2619",
+                "region": "SIMIYU",
+                "gpa": "3.31",
+                "position": 28
+            },
+            {
+                "school_name": "NKOLOLO",
+                "school_number": "S3652",
+                "region": "SIMIYU",
+                "gpa": "3.312",
+                "position": 29
+            },
+            {
+                "school_name": "GEGEDI",
+                "school_number": "S2992",
+                "region": "SIMIYU",
+                "gpa": "3.3264",
+                "position": 30
+            },
+            {
+                "school_name": "MWASWALE",
+                "school_number": "S2111",
+                "region": "SIMIYU",
+                "gpa": "3.3287",
+                "position": 31
+            },
+            {
+                "school_name": "NASSA",
+                "school_number": "S1029",
+                "region": "SIMIYU",
+                "gpa": "3.331",
+                "position": 32
+            },
+            {
+                "school_name": "MATABA",
+                "school_number": "S2565",
+                "region": "SIMIYU",
+                "gpa": "3.3493",
+                "position": 33
+            },
+            {
+                "school_name": "GASUMA",
+                "school_number": "S2109",
+                "region": "SIMIYU",
+                "gpa": "3.3517",
+                "position": 34
+            },
+            {
+                "school_name": "KIDINDA",
+                "school_number": "S2957",
+                "region": "SIMIYU",
+                "gpa": "3.3556",
+                "position": 35
+            },
+            {
+                "school_name": "DR. CHEGENI",
+                "school_number": "S5670",
+                "region": "SIMIYU",
+                "gpa": "3.3557",
+                "position": 36
+            },
+            {
+                "school_name": "MWALUSHU",
+                "school_number": "S2973",
+                "region": "SIMIYU",
+                "gpa": "3.3646",
+                "position": 37
+            },
+            {
+                "school_name": "MWASAYI",
+                "school_number": "S1217",
+                "region": "SIMIYU",
+                "gpa": "3.3773",
+                "position": 38
+            },
+            {
+                "school_name": "KIMALI",
+                "school_number": "S1223",
+                "region": "SIMIYU",
+                "gpa": "3.3794",
+                "position": 39
+            },
+            {
+                "school_name": "SENG'WA",
+                "school_number": "S2688",
+                "region": "SIMIYU",
+                "gpa": "3.393",
+                "position": 40
+            },
+            {
+                "school_name": "MWAMANONGU",
+                "school_number": "S2100",
+                "region": "SIMIYU",
+                "gpa": "3.397",
+                "position": 41
+            },
+            {
+                "school_name": "MAHAHA",
+                "school_number": "S2023",
+                "region": "SIMIYU",
+                "gpa": "3.3979",
+                "position": 42
+            },
+            {
+                "school_name": "MAHEMBE",
+                "school_number": "S2106",
+                "region": "SIMIYU",
+                "gpa": "3.4",
+                "position": 43
+            },
+            {
+                "school_name": "SANGAMWALUGESHA",
+                "school_number": "S2570",
+                "region": "SIMIYU",
+                "gpa": "3.4018",
+                "position": 44
+            },
+            {
+                "school_name": "NYABUBINZA",
+                "school_number": "S1782",
+                "region": "SIMIYU",
+                "gpa": "3.405",
+                "position": 45
+            },
+            {
+                "school_name": "IKUNGULIPU",
+                "school_number": "S2980",
+                "region": "SIMIYU",
+                "gpa": "3.406",
+                "position": 46
+            },
+            {
+                "school_name": "NG'WANG'WALI",
+                "school_number": "S2960",
+                "region": "SIMIYU",
+                "gpa": "3.4111",
+                "position": 47
+            },
+            {
+                "school_name": "MEATU",
+                "school_number": "S0641",
+                "region": "SIMIYU",
+                "gpa": "3.4159",
+                "position": 48
+            },
+            {
+                "school_name": "BANEMHI",
+                "school_number": "S2993",
+                "region": "SIMIYU",
+                "gpa": "3.4168",
+                "position": 49
+            },
+            {
+                "school_name": "MWANTIMBA",
+                "school_number": "S3447",
+                "region": "SIMIYU",
+                "gpa": "3.4284",
+                "position": 50
+            },
+            {
+                "school_name": "MWAKILANGI",
+                "school_number": "S2983",
+                "region": "SIMIYU",
+                "gpa": "3.4446",
+                "position": 51
+            },
+            {
+                "school_name": "BUDALABUJIGA",
+                "school_number": "S2967",
+                "region": "SIMIYU",
+                "gpa": "3.4514",
+                "position": 52
+            },
+            {
+                "school_name": "NG'WIGWA",
+                "school_number": "S2571",
+                "region": "SIMIYU",
+                "gpa": "3.4636",
+                "position": 53
+            },
+            {
+                "school_name": "KULIMI",
+                "school_number": "S1959",
+                "region": "SIMIYU",
+                "gpa": "3.4724",
+                "position": 54
+            },
+            {
+                "school_name": "MWAMANENGE",
+                "school_number": "S3346",
+                "region": "SIMIYU",
+                "gpa": "3.476",
+                "position": 55
+            },
+            {
+                "school_name": "KISHAMAPANDA",
+                "school_number": "S2808",
+                "region": "SIMIYU",
+                "gpa": "3.4859",
+                "position": 56
+            },
+            {
+                "school_name": "IKINDILO",
+                "school_number": "S2979",
+                "region": "SIMIYU",
+                "gpa": "3.4873",
+                "position": 57
+            },
+            {
+                "school_name": "SAKAPE",
+                "school_number": "S5672",
+                "region": "SIMIYU",
+                "gpa": "3.4877",
+                "position": 58
+            },
+            {
+                "school_name": "NYALIKUNGU",
+                "school_number": "S1539",
+                "region": "SIMIYU",
+                "gpa": "3.4951",
+                "position": 59
+            },
+            {
+                "school_name": "ANTHONY MTAKA",
+                "school_number": "S5669",
+                "region": "SIMIYU",
+                "gpa": "3.5054",
+                "position": 60
+            },
+            {
+                "school_name": "NYAWA",
+                "school_number": "S2996",
+                "region": "SIMIYU",
+                "gpa": "3.5114",
+                "position": 61
+            },
+            {
+                "school_name": "ITUBUKILO",
+                "school_number": "S2961",
+                "region": "SIMIYU",
+                "gpa": "3.5131",
+                "position": 62
+            },
+            {
+                "school_name": "NG'HUMBU",
+                "school_number": "S2566",
+                "region": "SIMIYU",
+                "gpa": "3.5215",
+                "position": 63
+            },
+            {
+                "school_name": "HABIYA",
+                "school_number": "S2969",
+                "region": "SIMIYU",
+                "gpa": "3.5261",
+                "position": 64
+            },
+            {
+                "school_name": "MWADOBANA DAY",
+                "school_number": "S2108",
+                "region": "SIMIYU",
+                "gpa": "3.5265",
+                "position": 65
+            },
+            {
+                "school_name": "MWAMAGIGISI",
+                "school_number": "S4963",
+                "region": "SIMIYU",
+                "gpa": "3.5301",
+                "position": 66
+            },
+            {
+                "school_name": "NKINDWABIYE",
+                "school_number": "S2997",
+                "region": "SIMIYU",
+                "gpa": "3.5302",
+                "position": 67
+            },
+            {
+                "school_name": "MADILANA",
+                "school_number": "S2985",
+                "region": "SIMIYU",
+                "gpa": "3.5311",
+                "position": 68
+            },
+            {
+                "school_name": "IBULYU",
+                "school_number": "S2994",
+                "region": "SIMIYU",
+                "gpa": "3.5401",
+                "position": 69
+            },
+            {
+                "school_name": "MWAKALUBA",
+                "school_number": "S4157",
+                "region": "SIMIYU",
+                "gpa": "3.5463",
+                "position": 70
+            },
+            {
+                "school_name": "MKULA",
+                "school_number": "S1238",
+                "region": "SIMIYU",
+                "gpa": "3.5478",
+                "position": 71
+            },
+            {
+                "school_name": "KASOLI",
+                "school_number": "S2995",
+                "region": "SIMIYU",
+                "gpa": "3.5497",
+                "position": 72
+            },
+            {
+                "school_name": "MAKAO",
+                "school_number": "S5839",
+                "region": "SIMIYU",
+                "gpa": "3.5597",
+                "position": 73
+            },
+            {
+                "school_name": "MALILI",
+                "school_number": "S2504",
+                "region": "SIMIYU",
+                "gpa": "3.5667",
+                "position": 74
+            },
+            {
+                "school_name": "NGASAMO",
+                "school_number": "S1996",
+                "region": "SIMIYU",
+                "gpa": "3.5669",
+                "position": 75
+            },
+            {
+                "school_name": "BINZA",
+                "school_number": "S0710",
+                "region": "SIMIYU",
+                "gpa": "3.5713",
+                "position": 76
+            },
+            {
+                "school_name": "BYUNA",
+                "school_number": "S2978",
+                "region": "SIMIYU",
+                "gpa": "3.5754",
+                "position": 77
+            },
+            {
+                "school_name": "KADOTO",
+                "school_number": "S1781",
+                "region": "SIMIYU",
+                "gpa": "3.5765",
+                "position": 78
+            },
+            {
+                "school_name": "SIMIYU",
+                "school_number": "S5301",
+                "region": "SIMIYU",
+                "gpa": "3.5912",
+                "position": 79
+            },
+            {
+                "school_name": "NKOMA DAY",
+                "school_number": "S2174",
+                "region": "SIMIYU",
+                "gpa": "3.5922",
+                "position": 80
+            },
+            {
+                "school_name": "BUSHASHI",
+                "school_number": "S2568",
+                "region": "SIMIYU",
+                "gpa": "3.5945",
+                "position": 81
+            },
+            {
+                "school_name": "IGALUKILO",
+                "school_number": "S2117",
+                "region": "SIMIYU",
+                "gpa": "3.5983",
+                "position": 82
+            },
+            {
+                "school_name": "ZEBEYA",
+                "school_number": "S1960",
+                "region": "SIMIYU",
+                "gpa": "3.6066",
+                "position": 83
+            },
+            {
+                "school_name": "KINAMWIGULU",
+                "school_number": "S1957",
+                "region": "SIMIYU",
+                "gpa": "3.6088",
+                "position": 84
+            },
+            {
+                "school_name": "IKINABUSHU",
+                "school_number": "S2975",
+                "region": "SIMIYU",
+                "gpa": "3.6128",
+                "position": 85
+            },
+            {
+                "school_name": "KINANG'WELI",
+                "school_number": "S2971",
+                "region": "SIMIYU",
+                "gpa": "3.6207",
+                "position": 86
+            },
+            {
+                "school_name": "OLD MASWA",
+                "school_number": "S3446",
+                "region": "SIMIYU",
+                "gpa": "3.6316",
+                "position": 87
+            },
+            {
+                "school_name": "NTUZU",
+                "school_number": "S1066",
+                "region": "SIMIYU",
+                "gpa": "3.6334",
+                "position": 88
+            },
+            {
+                "school_name": "SALAGE",
+                "school_number": "S3340",
+                "region": "SIMIYU",
+                "gpa": "3.6469",
+                "position": 89
+            },
+            {
+                "school_name": "MWAMLAPA",
+                "school_number": "S2959",
+                "region": "SIMIYU",
+                "gpa": "3.6498",
+                "position": 90
+            },
+            {
+                "school_name": "NYAKABINDI",
+                "school_number": "S2113",
+                "region": "SIMIYU",
+                "gpa": "3.6499",
+                "position": 91
+            },
+            {
+                "school_name": "SAKWE",
+                "school_number": "S2963",
+                "region": "SIMIYU",
+                "gpa": "3.6513",
+                "position": 92
+            },
+            {
+                "school_name": "ITILIMA",
+                "school_number": "S1034",
+                "region": "SIMIYU",
+                "gpa": "3.6577",
+                "position": 93
+            },
+            {
+                "school_name": "MWAKALEKA",
+                "school_number": "S2567",
+                "region": "SIMIYU",
+                "gpa": "3.6613",
+                "position": 94
+            },
+            {
+                "school_name": "CHINAMILI",
+                "school_number": "S2966",
+                "region": "SIMIYU",
+                "gpa": "3.6651",
+                "position": 95
+            },
+            {
+                "school_name": "MASELA",
+                "school_number": "S1954",
+                "region": "SIMIYU",
+                "gpa": "3.6658",
+                "position": 96
+            },
+            {
+                "school_name": "MWAMALOLE",
+                "school_number": "S2271",
+                "region": "SIMIYU",
+                "gpa": "3.6797",
+                "position": 97
+            },
+            {
+                "school_name": "ITULE",
+                "school_number": "S3345",
+                "region": "SIMIYU",
+                "gpa": "3.683",
+                "position": 98
+            },
+            {
+                "school_name": "LAINI",
+                "school_number": "S1828",
+                "region": "SIMIYU",
+                "gpa": "3.6867",
+                "position": 99
+            },
+            {
+                "school_name": "KABALE-BARIADI",
+                "school_number": "S1723",
+                "region": "SIMIYU",
+                "gpa": "3.6964",
+                "position": 100
+            },
+            {
+                "school_name": "SUKUMA",
+                "school_number": "S1953",
+                "region": "SIMIYU",
+                "gpa": "3.6968",
+                "position": 101
+            },
+            {
+                "school_name": "NYALUHANDE DAY",
+                "school_number": "S2242",
+                "region": "SIMIYU",
+                "gpa": "3.6987",
+                "position": 102
+            },
+            {
+                "school_name": "LINGEKA",
+                "school_number": "S2274",
+                "region": "SIMIYU",
+                "gpa": "3.7038",
+                "position": 103
+            },
+            {
+                "school_name": "BUCHAMBI",
+                "school_number": "S3468",
+                "region": "SIMIYU",
+                "gpa": "3.7083",
+                "position": 104
+            },
+            {
+                "school_name": "IMALASEKO",
+                "school_number": "S2616",
+                "region": "SIMIYU",
+                "gpa": "3.7106",
+                "position": 105
+            },
+            {
+                "school_name": "NGULIGULI",
+                "school_number": "S1631",
+                "region": "SIMIYU",
+                "gpa": "3.7236",
+                "position": 106
+            },
+            {
+                "school_name": "LAGANGABILILI",
+                "school_number": "S2968",
+                "region": "SIMIYU",
+                "gpa": "3.7282",
+                "position": 107
+            },
+            {
+                "school_name": "GIRIKU",
+                "school_number": "S2043",
+                "region": "SIMIYU",
+                "gpa": "3.7286",
+                "position": 108
+            },
+            {
+                "school_name": "SHISHANI",
+                "school_number": "S2986",
+                "region": "SIMIYU",
+                "gpa": "3.7299",
+                "position": 109
+            },
+            {
+                "school_name": "MWAGALA",
+                "school_number": "S1785",
+                "region": "SIMIYU",
+                "gpa": "3.7342",
+                "position": 110
+            },
+            {
+                "school_name": "CHENGE",
+                "school_number": "S2990",
+                "region": "SIMIYU",
+                "gpa": "3.7385",
+                "position": 111
+            },
+            {
+                "school_name": "SUNZULA",
+                "school_number": "S2984",
+                "region": "SIMIYU",
+                "gpa": "3.7387",
+                "position": 112
+            },
+            {
+                "school_name": "MWAKISANDU",
+                "school_number": "S6093",
+                "region": "SIMIYU",
+                "gpa": "3.7431",
+                "position": 113
+            },
+            {
+                "school_name": "SAPIWI",
+                "school_number": "S1651",
+                "region": "SIMIYU",
+                "gpa": "3.7466",
+                "position": 114
+            },
+            {
+                "school_name": "NYANGWE",
+                "school_number": "S2788",
+                "region": "SIMIYU",
+                "gpa": "3.7517",
+                "position": 115
+            },
+            {
+                "school_name": "BUDEKWA",
+                "school_number": "S1955",
+                "region": "SIMIYU",
+                "gpa": "3.754",
+                "position": 116
+            },
+            {
+                "school_name": "NYASOSI",
+                "school_number": "S2958",
+                "region": "SIMIYU",
+                "gpa": "3.7602",
+                "position": 117
+            },
+            {
+                "school_name": "MASUMBA",
+                "school_number": "S3342",
+                "region": "SIMIYU",
+                "gpa": "3.7621",
+                "position": 118
+            },
+            {
+                "school_name": "NDOLELEJI",
+                "school_number": "S2987",
+                "region": "SIMIYU",
+                "gpa": "3.7657",
+                "position": 119
+            },
+            {
+                "school_name": "KABITA",
+                "school_number": "S1704",
+                "region": "SIMIYU",
+                "gpa": "3.7795",
+                "position": 120
+            },
+            {
+                "school_name": "MWAUKOLI",
+                "school_number": "S4425",
+                "region": "SIMIYU",
+                "gpa": "3.7796",
+                "position": 121
+            },
+            {
+                "school_name": "IPILILO",
+                "school_number": "S1784",
+                "region": "SIMIYU",
+                "gpa": "3.7832",
+                "position": 122
+            },
+            {
+                "school_name": "ISANGA",
+                "school_number": "S1783",
+                "region": "SIMIYU",
+                "gpa": "3.785",
+                "position": 123
+            },
+            {
+                "school_name": "MAJEBELE",
+                "school_number": "S1956",
+                "region": "SIMIYU",
+                "gpa": "3.786",
+                "position": 124
+            },
+            {
+                "school_name": "MWAMTANI",
+                "school_number": "S2988",
+                "region": "SIMIYU",
+                "gpa": "3.7939",
+                "position": 125
+            },
+            {
+                "school_name": "SAKASAKA",
+                "school_number": "S2099",
+                "region": "SIMIYU",
+                "gpa": "3.8018",
+                "position": 126
+            },
+            {
+                "school_name": "MWASAMBA",
+                "school_number": "S5286",
+                "region": "SIMIYU",
+                "gpa": "3.8054",
+                "position": 127
+            },
+            {
+                "school_name": "MWABUSALU",
+                "school_number": "S2623",
+                "region": "SIMIYU",
+                "gpa": "3.8058",
+                "position": 128
+            },
+            {
+                "school_name": "GUDUWI",
+                "school_number": "S2991",
+                "region": "SIMIYU",
+                "gpa": "3.812",
+                "position": 129
+            },
+            {
+                "school_name": "BUKUNDI",
+                "school_number": "S2622",
+                "region": "SIMIYU",
+                "gpa": "3.8193",
+                "position": 130
+            },
+            {
+                "school_name": "MHUNZE",
+                "school_number": "S2110",
+                "region": "SIMIYU",
+                "gpa": "3.8234",
+                "position": 131
+            },
+            {
+                "school_name": "DUTWA",
+                "school_number": "S0970",
+                "region": "SIMIYU",
+                "gpa": "3.8287",
+                "position": 132
+            },
+            {
+                "school_name": "MBITI",
+                "school_number": "S2962",
+                "region": "SIMIYU",
+                "gpa": "3.8321",
+                "position": 133
+            },
+            {
+                "school_name": "SAGATA",
+                "school_number": "S2989",
+                "region": "SIMIYU",
+                "gpa": "3.8357",
+                "position": 134
+            },
+            {
+                "school_name": "IKUNGULYABASHASHI",
+                "school_number": "S2976",
+                "region": "SIMIYU",
+                "gpa": "3.8412",
+                "position": 135
+            },
+            {
+                "school_name": "PAJI",
+                "school_number": "S2273",
+                "region": "SIMIYU",
+                "gpa": "3.8487",
+                "position": 136
+            },
+            {
+                "school_name": "SENANI",
+                "school_number": "S3344",
+                "region": "SIMIYU",
+                "gpa": "3.8521",
+                "position": 137
+            },
+            {
+                "school_name": "BIASHARA BARIADI",
+                "school_number": "S2956",
+                "region": "SIMIYU",
+                "gpa": "3.8569",
+                "position": 138
+            },
+            {
+                "school_name": "SOGESCA",
+                "school_number": "S1424",
+                "region": "SIMIYU",
+                "gpa": "3.8687",
+                "position": 139
+            },
+            {
+                "school_name": "LYUSA",
+                "school_number": "S2620",
+                "region": "SIMIYU",
+                "gpa": "3.873",
+                "position": 140
+            },
+            {
+                "school_name": "LUNG'WA",
+                "school_number": "S2965",
+                "region": "SIMIYU",
+                "gpa": "3.8744",
+                "position": 141
+            },
+            {
+                "school_name": "SOMANDA",
+                "school_number": "S2107",
+                "region": "SIMIYU",
+                "gpa": "3.8927",
+                "position": 142
+            },
+            {
+                "school_name": "MWANDETE",
+                "school_number": "S1780",
+                "region": "SIMIYU",
+                "gpa": "3.9017",
+                "position": 143
+            },
+            {
+                "school_name": "BUNAMHALA MBUGANI",
+                "school_number": "S2972",
+                "region": "SIMIYU",
+                "gpa": "3.9167",
+                "position": 144
+            },
+            {
+                "school_name": "IDOSELO",
+                "school_number": "S2981",
+                "region": "SIMIYU",
+                "gpa": "3.9242",
+                "position": 145
+            },
+            {
+                "school_name": "INALO",
+                "school_number": "S2970",
+                "region": "SIMIYU",
+                "gpa": "3.9259",
+                "position": 146
+            },
+            {
+                "school_name": "KISESA",
+                "school_number": "S2617",
+                "region": "SIMIYU",
+                "gpa": "3.9355",
+                "position": 147
+            },
+            {
+                "school_name": "SHIGALA",
+                "school_number": "S2789",
+                "region": "SIMIYU",
+                "gpa": "3.943",
+                "position": 148
+            },
+            {
+                "school_name": "MWANJOLO",
+                "school_number": "S2618",
+                "region": "SIMIYU",
+                "gpa": "3.9638",
+                "position": 149
+            },
+            {
+                "school_name": "MWABUMA",
+                "school_number": "S2272",
+                "region": "SIMIYU",
+                "gpa": "4.0035",
+                "position": 150
+            },
+            {
+                "school_name": "BUMERA",
+                "school_number": "S2112",
+                "region": "SIMIYU",
+                "gpa": "4.0199",
+                "position": 151
+            },
+            {
+                "school_name": "SHISHIYU",
+                "school_number": "S1958",
+                "region": "SIMIYU",
+                "gpa": "4.037",
+                "position": 152
+            },
+            {
+                "school_name": "MWABAYANDA",
+                "school_number": "S2569",
+                "region": "SIMIYU",
+                "gpa": "4.0553",
+                "position": 153
+            },
+            {
+                "school_name": "KALEMELA",
+                "school_number": "S3528",
+                "region": "SIMIYU",
+                "gpa": "4.0563",
+                "position": 154
+            },
+            {
+                "school_name": "BADUGU",
+                "school_number": "S1425",
+                "region": "SIMIYU",
+                "gpa": "4.0688",
+                "position": 155
+            },
+            {
+                "school_name": "LUBIGA",
+                "school_number": "S2275",
+                "region": "SIMIYU",
+                "gpa": "4.1094",
+                "position": 156
+            },
+            {
+                "school_name": "KIJELESHI",
+                "school_number": "S4917",
+                "region": "SIMIYU",
+                "gpa": "4.1154",
+                "position": 157
+            }
+        ];
+
+        function filterArrayByKeyValue(array, key, value) {
+            value = value.toLowerCase();
+            return array.filter(function (obj) {
+                var objValue = obj[key].toLowerCase();
+                return objValue.includes(value);
+            });
+        }
+
+        function displayFilteredList(array) {
+            var tableBody = document.querySelector('#listContainer tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            array.forEach(function (obj) {
+                var row = document.createElement('tr');
+                var nameCell = document.createElement('td');
+                var gpaCell = document.createElement('td');
+                var posCell = document.createElement('td');
+
+                nameCell.textContent = obj.school_name;
+                gpaCell.textContent = obj.gpa;
+                posCell.textContent = obj.position;
+
+                row.appendChild(nameCell);
+                row.appendChild(posCell);
+                row.appendChild(gpaCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        displayFilteredList(dataArray);
+
+        var filterInput = document.getElementById('search');
+        filterInput.addEventListener('input', function () {
+            var filterValue = this.value;
+            var filteredArray = filterArrayByKeyValue(dataArray, 'school_name', filterValue);
+            displayFilteredList(filteredArray);
+        });
+
+    </script>
+</body>
+
+</html>
