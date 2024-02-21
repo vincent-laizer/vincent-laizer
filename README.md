@@ -1,4 +1,5 @@
 # 🚀 Vincent Laizer's Portfolio Website 🚀
+<img src="https://komarev.com/ghpvc/?username=vincent-laizer&label=vincent-laizer&color=0e75b6&style=flat" alt="since 21 Feb,2024" />
 
 Dive into the cosmic source code that powers Vicent Laizer's extraordinary personal portfolio website, meticulously crafted using the enchanting Angular 17.
 
