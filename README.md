@@ -14,7 +14,7 @@
   
   <p>
     <a href="https://github.com/ryo-ma/github-profile-trophy">
-      <img src="https://github-profile-trophy.vercel.app/?username=vincent-laizer&title=Commits,Followers,Stars,Repositories,MultiLanguage,Experience&column=3&margin-w=15&margin-h=15&no-bg=true" alt="vincent-laizer Github's Showcase" />
+      <img src="https://github-profile-trophy.vercel.app/?username=vincent-laizer&title=Commits,Followers,Stars,Repositories,Issues,Experience&column=3&margin-w=15&margin-h=15&no-bg=true" alt="vincent-laizer Github's Showcase" />
     </a>
   </p>
   
