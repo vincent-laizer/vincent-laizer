@@ -48,7 +48,7 @@
 
 ### Frameworks/Tools & Skills
 <p align="right">
- <ims src="vincent-laizer-skills.svg" alt="vincent-laizer skills"/>
+ <img src="vincent-laizer-skills.svg" alt="vincent-laizer skills"/>
 
 </p>
 
