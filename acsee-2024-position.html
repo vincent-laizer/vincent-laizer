@@ -1,0 +1,4718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>ACSEE 2024 School Positions</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <input type="text" class="form-control mt-3" placeholder="search schools by name" id="search">
+  <div class="table-responsive">
+    <table id="listContainer" class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>GPA</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div>
+    <h4>Developed By: <a href="https://vincent-laizer.github.io/vincent-laizer/">Vicent Laizer</a></h4>
+  </div>
+</div>
+<script>
+const dataArray = [
+    {
+        "name": " TABORA BOYS' ",
+        "gpa": "1.3357 GRADE A (EXCELLENT)",
+        "position": "1"
+    },
+    {
+        "name": " KEMEBOS ",
+        "gpa": "1.3646 GRADE A (EXCELLENT)",
+        "position": "2"
+    },
+    {
+        "name": " MZUMBE ",
+        "gpa": "1.3657 GRADE A (EXCELLENT)",
+        "position": "3"
+    },
+    {
+        "name": " KIBAHA ",
+        "gpa": "1.4167 GRADE A (EXCELLENT)",
+        "position": "4"
+    },
+    {
+        "name": " AHMES ",
+        "gpa": "1.5084 GRADE B (VERY GOOD)",
+        "position": "5"
+    },
+    {
+        "name": " MARIAN BOYS'  ",
+        "gpa": "1.5476 GRADE B (VERY GOOD)",
+        "position": "6"
+    },
+    {
+        "name": " TALLO ",
+        "gpa": "1.5656 GRADE B (VERY GOOD)",
+        "position": "7"
+    },
+    {
+        "name": " ILBORU ",
+        "gpa": "1.5956 GRADE B (VERY GOOD)",
+        "position": "8"
+    },
+    {
+        "name": " LAKE TANGANYIKA ",
+        "gpa": "1.5972 GRADE B (VERY GOOD)",
+        "position": "9"
+    },
+    {
+        "name": " AHMES MBWENI ",
+        "gpa": "1.6102 GRADE B (VERY GOOD)",
+        "position": "10"
+    },
+    {
+        "name": " ZIBA ",
+        "gpa": "1.6182 GRADE B (VERY GOOD)",
+        "position": "11"
+    },
+    {
+        "name": " NYAISHOZI ",
+        "gpa": "1.6375 GRADE B (VERY GOOD)",
+        "position": "12"
+    },
+    {
+        "name": " MKINDI ",
+        "gpa": "1.6380 GRADE B (VERY GOOD)",
+        "position": "13"
+    },
+    {
+        "name": " FEZA BOYS' ",
+        "gpa": "1.6705 GRADE B (VERY GOOD)",
+        "position": "14"
+    },
+    {
+        "name": " UWATA ",
+        "gpa": "1.6826 GRADE B (VERY GOOD)",
+        "position": "15"
+    },
+    {
+        "name": " NACHINGWEA ",
+        "gpa": "1.6872 GRADE B (VERY GOOD)",
+        "position": "16"
+    },
+    {
+        "name": " HIGH VIEW SCHOOL OF ZANZIBAR",
+        "gpa": "1.7057 GRADE B (VERY GOOD)",
+        "position": "17"
+    },
+    {
+        "name": " DIGODIGO ",
+        "gpa": "1.7076 GRADE B (VERY GOOD)",
+        "position": "18"
+    },
+    {
+        "name": " KILOSA ",
+        "gpa": "1.7125 GRADE B (VERY GOOD)",
+        "position": "19"
+    },
+    {
+        "name": " MADIBIRA ",
+        "gpa": "1.7210 GRADE B (VERY GOOD)",
+        "position": "20"
+    },
+    {
+        "name": " KAFUNDO ",
+        "gpa": "1.7222 GRADE B (VERY GOOD)",
+        "position": "21"
+    },
+    {
+        "name": " AYALAGAYA ",
+        "gpa": "1.7292 GRADE B (VERY GOOD)",
+        "position": "22"
+    },
+    {
+        "name": " MALAMPAKA ",
+        "gpa": "1.7320 GRADE B (VERY GOOD)",
+        "position": "23"
+    },
+    {
+        "name": " MLANGARINI ",
+        "gpa": "1.7361 GRADE B (VERY GOOD)",
+        "position": "24"
+    },
+    {
+        "name": " MSALATO ",
+        "gpa": "1.7370 GRADE B (VERY GOOD)",
+        "position": "25"
+    },
+    {
+        "name": " MWANDET ",
+        "gpa": "1.7451 GRADE B (VERY GOOD)",
+        "position": "26"
+    },
+    {
+        "name": " SWILLA ",
+        "gpa": "1.7500 GRADE B (VERY GOOD)",
+        "position": "27"
+    },
+    {
+        "name": " ZAKIA MEGHJI ",
+        "gpa": "1.7500 GRADE B (VERY GOOD)",
+        "position": "28"
+    },
+    {
+        "name": " MWISI ",
+        "gpa": "1.7512 GRADE B (VERY GOOD)",
+        "position": "29"
+    },
+    {
+        "name": " IGUNGA ",
+        "gpa": "1.7516 GRADE B (VERY GOOD)",
+        "position": "30"
+    },
+    {
+        "name": " SUMVE ",
+        "gpa": "1.7517 GRADE B (VERY GOOD)",
+        "position": "31"
+    },
+    {
+        "name": " NATTA ",
+        "gpa": "1.7569 GRADE B (VERY GOOD)",
+        "position": "32"
+    },
+    {
+        "name": " TABORA GIRLS' ",
+        "gpa": "1.7570 GRADE B (VERY GOOD)",
+        "position": "33"
+    },
+    {
+        "name": " FEZA GIRLS' ",
+        "gpa": "1.7706 GRADE B (VERY GOOD)",
+        "position": "34"
+    },
+    {
+        "name": " MUKIRE ",
+        "gpa": "1.7778 GRADE B (VERY GOOD)",
+        "position": "35"
+    },
+    {
+        "name": " BUNDA ",
+        "gpa": "1.7855 GRADE B (VERY GOOD)",
+        "position": "36"
+    },
+    {
+        "name": " KIUTA ",
+        "gpa": "1.7857 GRADE B (VERY GOOD)",
+        "position": "37"
+    },
+    {
+        "name": " CANOSSA ",
+        "gpa": "1.7984 GRADE B (VERY GOOD)",
+        "position": "38"
+    },
+    {
+        "name": " RIDHWAA SEMINARY",
+        "gpa": "1.7991 GRADE B (VERY GOOD)",
+        "position": "39"
+    },
+    {
+        "name": " HARAMBEE ",
+        "gpa": "1.7996 GRADE B (VERY GOOD)",
+        "position": "40"
+    },
+    {
+        "name": " SOYA ",
+        "gpa": "1.8011 GRADE B (VERY GOOD)",
+        "position": "41"
+    },
+    {
+        "name": " ST.MARY'S MAZINDE JUU ",
+        "gpa": "1.8023 GRADE B (VERY GOOD)",
+        "position": "42"
+    },
+    {
+        "name": " KIMULI ",
+        "gpa": "1.8056 GRADE B (VERY GOOD)",
+        "position": "43"
+    },
+    {
+        "name": " MTWARA GIRLS' ",
+        "gpa": "1.8103 GRADE B (VERY GOOD)",
+        "position": "44"
+    },
+    {
+        "name": " KILAKALA ",
+        "gpa": "1.8220 GRADE B (VERY GOOD)",
+        "position": "45"
+    },
+    {
+        "name": " KWIRO ",
+        "gpa": "1.8239 GRADE B (VERY GOOD)",
+        "position": "46"
+    },
+    {
+        "name": " PARANE ",
+        "gpa": "1.8246 GRADE B (VERY GOOD)",
+        "position": "47"
+    },
+    {
+        "name": " BUKOMBE ",
+        "gpa": "1.8370 GRADE B (VERY GOOD)",
+        "position": "48"
+    },
+    {
+        "name": " KISIMIRI ",
+        "gpa": "1.8443 GRADE B (VERY GOOD)",
+        "position": "49"
+    },
+    {
+        "name": " MAUA SEMINARY",
+        "gpa": "1.8509 GRADE B (VERY GOOD)",
+        "position": "50"
+    },
+    {
+        "name": " IMPERIAL ",
+        "gpa": "1.8542 GRADE B (VERY GOOD)",
+        "position": "51"
+    },
+    {
+        "name": " NANGWA ",
+        "gpa": "1.8550 GRADE B (VERY GOOD)",
+        "position": "52"
+    },
+    {
+        "name": " DAREDA ",
+        "gpa": "1.8679 GRADE B (VERY GOOD)",
+        "position": "53"
+    },
+    {
+        "name": " TLAWI ",
+        "gpa": "1.8709 GRADE B (VERY GOOD)",
+        "position": "54"
+    },
+    {
+        "name": " MSAKILA ",
+        "gpa": "1.8782 GRADE B (VERY GOOD)",
+        "position": "55"
+    },
+    {
+        "name": " ST CATHERINE'S ",
+        "gpa": "1.8819 GRADE B (VERY GOOD)",
+        "position": "56"
+    },
+    {
+        "name": " EMANUEL NCHIMBI ",
+        "gpa": "1.8828 GRADE B (VERY GOOD)",
+        "position": "57"
+    },
+    {
+        "name": " MAFISA ",
+        "gpa": "1.8829 GRADE B (VERY GOOD)",
+        "position": "58"
+    },
+    {
+        "name": " KASANGEZI ",
+        "gpa": "1.8874 GRADE B (VERY GOOD)",
+        "position": "59"
+    },
+    {
+        "name": " RUNZEWE ",
+        "gpa": "1.8993 GRADE B (VERY GOOD)",
+        "position": "60"
+    },
+    {
+        "name": " EINOTI ",
+        "gpa": "1.9012 GRADE B (VERY GOOD)",
+        "position": "61"
+    },
+    {
+        "name": " ST.PETER'S SEMINARY",
+        "gpa": "1.9048 GRADE B (VERY GOOD)",
+        "position": "62"
+    },
+    {
+        "name": " KAISHO ",
+        "gpa": "1.9067 GRADE B (VERY GOOD)",
+        "position": "63"
+    },
+    {
+        "name": " MABIRA ",
+        "gpa": "1.9092 GRADE B (VERY GOOD)",
+        "position": "64"
+    },
+    {
+        "name": " ILEMELA ",
+        "gpa": "1.9120 GRADE B (VERY GOOD)",
+        "position": "65"
+    },
+    {
+        "name": " ST. MARCUS ",
+        "gpa": "1.9125 GRADE B (VERY GOOD)",
+        "position": "66"
+    },
+    {
+        "name": " IVUMWE ",
+        "gpa": "1.9127 GRADE B (VERY GOOD)",
+        "position": "67"
+    },
+    {
+        "name": " SANTAKAGWA ",
+        "gpa": "1.9133 GRADE B (VERY GOOD)",
+        "position": "68"
+    },
+    {
+        "name": " LULUMBA ",
+        "gpa": "1.9171 GRADE B (VERY GOOD)",
+        "position": "69"
+    },
+    {
+        "name": " ST.JUDE'S  ",
+        "gpa": "1.9183 GRADE B (VERY GOOD)",
+        "position": "70"
+    },
+    {
+        "name": " MWALIMU NYERERE ",
+        "gpa": "1.9218 GRADE B (VERY GOOD)",
+        "position": "71"
+    },
+    {
+        "name": " DAKAMA ",
+        "gpa": "1.9222 GRADE B (VERY GOOD)",
+        "position": "72"
+    },
+    {
+        "name": " TURKISH MAARIF ",
+        "gpa": "1.9231 GRADE B (VERY GOOD)",
+        "position": "73"
+    },
+    {
+        "name": " KISHAPU ",
+        "gpa": "1.9254 GRADE B (VERY GOOD)",
+        "position": "74"
+    },
+    {
+        "name": " MLONGWEMA ",
+        "gpa": "1.9286 GRADE B (VERY GOOD)",
+        "position": "75"
+    },
+    {
+        "name": " SONGE ",
+        "gpa": "1.9355 GRADE B (VERY GOOD)",
+        "position": "76"
+    },
+    {
+        "name": " HERITAGE ",
+        "gpa": "1.9359 GRADE B (VERY GOOD)",
+        "position": "77"
+    },
+    {
+        "name": " KISAZA ",
+        "gpa": "1.9368 GRADE B (VERY GOOD)",
+        "position": "78"
+    },
+    {
+        "name": " KIBURUBUTU  ",
+        "gpa": "1.9378 GRADE B (VERY GOOD)",
+        "position": "79"
+    },
+    {
+        "name": " MAWINDI ",
+        "gpa": "1.9394 GRADE B (VERY GOOD)",
+        "position": "80"
+    },
+    {
+        "name": " ST. CHRISTINA GIRLS' ",
+        "gpa": "1.9399 GRADE B (VERY GOOD)",
+        "position": "81"
+    },
+    {
+        "name": " HANDENI GIRLS HIGH SCHOOL",
+        "gpa": "1.9432 GRADE B (VERY GOOD)",
+        "position": "82"
+    },
+    {
+        "name": " KILAMSA ",
+        "gpa": "1.9457 GRADE B (VERY GOOD)",
+        "position": "83"
+    },
+    {
+        "name": " MARIAN GIRLS' ",
+        "gpa": "1.9460 GRADE B (VERY GOOD)",
+        "position": "84"
+    },
+    {
+        "name": " BWINA ",
+        "gpa": "1.9477 GRADE B (VERY GOOD)",
+        "position": "85"
+    },
+    {
+        "name": " ISTIQAAMA TANGA ISLAMIC ",
+        "gpa": "1.9483 GRADE B (VERY GOOD)",
+        "position": "86"
+    },
+    {
+        "name": " GHOMME ",
+        "gpa": "1.9510 GRADE B (VERY GOOD)",
+        "position": "87"
+    },
+    {
+        "name": " KIRANDO ",
+        "gpa": "1.9529 GRADE B (VERY GOOD)",
+        "position": "88"
+    },
+    {
+        "name": " TURA ",
+        "gpa": "1.9556 GRADE B (VERY GOOD)",
+        "position": "89"
+    },
+    {
+        "name": " IDETE ",
+        "gpa": "1.9566 GRADE B (VERY GOOD)",
+        "position": "90"
+    },
+    {
+        "name": " MONTFORT ",
+        "gpa": "1.9583 GRADE B (VERY GOOD)",
+        "position": "91"
+    },
+    {
+        "name": " KAMAGI ",
+        "gpa": "1.9611 GRADE B (VERY GOOD)",
+        "position": "92"
+    },
+    {
+        "name": " MVUMI MISSION ",
+        "gpa": "1.9651 GRADE B (VERY GOOD)",
+        "position": "93"
+    },
+    {
+        "name": " HARRISON UWATA ",
+        "gpa": "1.9653 GRADE B (VERY GOOD)",
+        "position": "94"
+    },
+    {
+        "name": " PREMIER BOYS ",
+        "gpa": "1.9688 GRADE B (VERY GOOD)",
+        "position": "95"
+    },
+    {
+        "name": " CHOME ",
+        "gpa": "1.9792 GRADE B (VERY GOOD)",
+        "position": "96"
+    },
+    {
+        "name": " MATEMANGA ",
+        "gpa": "1.9846 GRADE B (VERY GOOD)",
+        "position": "97"
+    },
+    {
+        "name": " WARI ",
+        "gpa": "1.9875 GRADE B (VERY GOOD)",
+        "position": "98"
+    },
+    {
+        "name": " CHILONWA ",
+        "gpa": "1.9877 GRADE B (VERY GOOD)",
+        "position": "99"
+    },
+    {
+        "name": " NDONO ",
+        "gpa": "1.9886 GRADE B (VERY GOOD)",
+        "position": "100"
+    },
+    {
+        "name": " GLENRONS GIRLS' ",
+        "gpa": "2.0000 GRADE C (GOOD)",
+        "position": "101"
+    },
+    {
+        "name": " ST. THERESIA GIRLS' ",
+        "gpa": "2.0000 GRADE C (GOOD)",
+        "position": "102"
+    },
+    {
+        "name": " KIBAKWE ",
+        "gpa": "2.0000 GRADE C (GOOD)",
+        "position": "103"
+    },
+    {
+        "name": " KIWERE ",
+        "gpa": "2.0000 GRADE C (GOOD)",
+        "position": "104"
+    },
+    {
+        "name": " ELPAS ",
+        "gpa": "2.0000 GRADE C (GOOD)",
+        "position": "105"
+    },
+    {
+        "name": " USANGI DAY ",
+        "gpa": "2.0030 GRADE C (GOOD)",
+        "position": "106"
+    },
+    {
+        "name": " MARANATHA ",
+        "gpa": "2.0052 GRADE C (GOOD)",
+        "position": "107"
+    },
+    {
+        "name": " MUYOVOZI ",
+        "gpa": "2.0060 GRADE C (GOOD)",
+        "position": "108"
+    },
+    {
+        "name": " ST. CLARA ",
+        "gpa": "2.0088 GRADE C (GOOD)",
+        "position": "109"
+    },
+    {
+        "name": " MIZENGO PINDA ",
+        "gpa": "2.0101 GRADE C (GOOD)",
+        "position": "110"
+    },
+    {
+        "name": " DINECHA ",
+        "gpa": "2.0104 GRADE C (GOOD)",
+        "position": "111"
+    },
+    {
+        "name": " KIGOMA ",
+        "gpa": "2.0105 GRADE C (GOOD)",
+        "position": "112"
+    },
+    {
+        "name": " PATRICK MISSION ",
+        "gpa": "2.0152 GRADE C (GOOD)",
+        "position": "113"
+    },
+    {
+        "name": " NYANDUGA ",
+        "gpa": "2.0181 GRADE C (GOOD)",
+        "position": "114"
+    },
+    {
+        "name": " ENGUSERO ",
+        "gpa": "2.0204 GRADE C (GOOD)",
+        "position": "115"
+    },
+    {
+        "name": " MSOLWA ",
+        "gpa": "2.0216 GRADE C (GOOD)",
+        "position": "116"
+    },
+    {
+        "name": " HANDENI ",
+        "gpa": "2.0221 GRADE C (GOOD)",
+        "position": "117"
+    },
+    {
+        "name": " MPITIMBI ",
+        "gpa": "2.0224 GRADE C (GOOD)",
+        "position": "118"
+    },
+    {
+        "name": " BUGENE ",
+        "gpa": "2.0229 GRADE C (GOOD)",
+        "position": "119"
+    },
+    {
+        "name": " TARIME ",
+        "gpa": "2.0237 GRADE C (GOOD)",
+        "position": "120"
+    },
+    {
+        "name": " BABATI DAY ",
+        "gpa": "2.0267 GRADE C (GOOD)",
+        "position": "121"
+    },
+    {
+        "name": " SUMBAWANGA ",
+        "gpa": "2.0302 GRADE C (GOOD)",
+        "position": "122"
+    },
+    {
+        "name": " KIWANJA ",
+        "gpa": "2.0328 GRADE C (GOOD)",
+        "position": "123"
+    },
+    {
+        "name": " BUMANGI ",
+        "gpa": "2.0350 GRADE C (GOOD)",
+        "position": "124"
+    },
+    {
+        "name": " UJIJI ",
+        "gpa": "2.0362 GRADE C (GOOD)",
+        "position": "125"
+    },
+    {
+        "name": " AGAPE LUTHERAN JUNIOR SEMINARY",
+        "gpa": "2.0373 GRADE C (GOOD)",
+        "position": "126"
+    },
+    {
+        "name": " KATOKE LWERU ",
+        "gpa": "2.0408 GRADE C (GOOD)",
+        "position": "127"
+    },
+    {
+        "name": " HENRY GOGARTY ",
+        "gpa": "2.0423 GRADE C (GOOD)",
+        "position": "128"
+    },
+    {
+        "name": " KIMALA ",
+        "gpa": "2.0426 GRADE C (GOOD)",
+        "position": "129"
+    },
+    {
+        "name": " MADISI ",
+        "gpa": "2.0451 GRADE C (GOOD)",
+        "position": "130"
+    },
+    {
+        "name": " SERENGETI DAY ",
+        "gpa": "2.0507 GRADE C (GOOD)",
+        "position": "131"
+    },
+    {
+        "name": " MSAKWALO ",
+        "gpa": "2.0527 GRADE C (GOOD)",
+        "position": "132"
+    },
+    {
+        "name": " SHAMSIYE BOYS' ",
+        "gpa": "2.0583 GRADE C (GOOD)",
+        "position": "133"
+    },
+    {
+        "name": " LUTENGANO ",
+        "gpa": "2.0598 GRADE C (GOOD)",
+        "position": "134"
+    },
+    {
+        "name": " MKONO ",
+        "gpa": "2.0603 GRADE C (GOOD)",
+        "position": "135"
+    },
+    {
+        "name": " UKUMBI ",
+        "gpa": "2.0625 GRADE C (GOOD)",
+        "position": "136"
+    },
+    {
+        "name": " ILALA ISLAMIC ",
+        "gpa": "2.0625 GRADE C (GOOD)",
+        "position": "137"
+    },
+    {
+        "name": " KILI ",
+        "gpa": "2.0652 GRADE C (GOOD)",
+        "position": "138"
+    },
+    {
+        "name": " MATAI ",
+        "gpa": "2.0692 GRADE C (GOOD)",
+        "position": "139"
+    },
+    {
+        "name": " SIMBEGA ",
+        "gpa": "2.0694 GRADE C (GOOD)",
+        "position": "140"
+    },
+    {
+        "name": " LUFILYO ",
+        "gpa": "2.0700 GRADE C (GOOD)",
+        "position": "141"
+    },
+    {
+        "name": " MUNGUMAJI ",
+        "gpa": "2.0728 GRADE C (GOOD)",
+        "position": "142"
+    },
+    {
+        "name": " PUMA ",
+        "gpa": "2.0753 GRADE C (GOOD)",
+        "position": "143"
+    },
+    {
+        "name": " MWANAMWEMA SHEIN ",
+        "gpa": "2.0776 GRADE C (GOOD)",
+        "position": "144"
+    },
+    {
+        "name": " MKINGALEO ",
+        "gpa": "2.0778 GRADE C (GOOD)",
+        "position": "145"
+    },
+    {
+        "name": " USONGWE ",
+        "gpa": "2.0794 GRADE C (GOOD)",
+        "position": "146"
+    },
+    {
+        "name": " WHITE LAKE ",
+        "gpa": "2.0797 GRADE C (GOOD)",
+        "position": "147"
+    },
+    {
+        "name": " MWAMASHIMBA ",
+        "gpa": "2.0807 GRADE C (GOOD)",
+        "position": "148"
+    },
+    {
+        "name": " TUMAINI SENIOR ",
+        "gpa": "2.0818 GRADE C (GOOD)",
+        "position": "149"
+    },
+    {
+        "name": " UNGWASI ",
+        "gpa": "2.0833 GRADE C (GOOD)",
+        "position": "150"
+    },
+    {
+        "name": " MBALIZI ",
+        "gpa": "2.0848 GRADE C (GOOD)",
+        "position": "151"
+    },
+    {
+        "name": " FOREST HILL ",
+        "gpa": "2.0850 GRADE C (GOOD)",
+        "position": "152"
+    },
+    {
+        "name": " IDUDA ",
+        "gpa": "2.0856 GRADE C (GOOD)",
+        "position": "153"
+    },
+    {
+        "name": " MUSOMA ",
+        "gpa": "2.0875 GRADE C (GOOD)",
+        "position": "154"
+    },
+    {
+        "name": " MUYENZI ",
+        "gpa": "2.0921 GRADE C (GOOD)",
+        "position": "155"
+    },
+    {
+        "name": " IGOWOLE ",
+        "gpa": "2.0931 GRADE C (GOOD)",
+        "position": "156"
+    },
+    {
+        "name": " JIFUNZENI ",
+        "gpa": "2.0931 GRADE C (GOOD)",
+        "position": "157"
+    },
+    {
+        "name": " MAKUMIRA ",
+        "gpa": "2.0940 GRADE C (GOOD)",
+        "position": "158"
+    },
+    {
+        "name": " MWATULOLE ",
+        "gpa": "2.0976 GRADE C (GOOD)",
+        "position": "159"
+    },
+    {
+        "name": " KAIZIREGE ",
+        "gpa": "2.0988 GRADE C (GOOD)",
+        "position": "160"
+    },
+    {
+        "name": " SOUTHERN HIGHLANDS ",
+        "gpa": "2.1023 GRADE C (GOOD)",
+        "position": "161"
+    },
+    {
+        "name": " MAGADINI ",
+        "gpa": "2.1048 GRADE C (GOOD)",
+        "position": "162"
+    },
+    {
+        "name": " NAWENGE ",
+        "gpa": "2.1062 GRADE C (GOOD)",
+        "position": "163"
+    },
+    {
+        "name": " MAARIF ",
+        "gpa": "2.1078 GRADE C (GOOD)",
+        "position": "164"
+    },
+    {
+        "name": " RUBYA SEMINARY",
+        "gpa": "2.1111 GRADE C (GOOD)",
+        "position": "165"
+    },
+    {
+        "name": " CHAMAZI ISLAMIC SEMINARY",
+        "gpa": "2.1111 GRADE C (GOOD)",
+        "position": "166"
+    },
+    {
+        "name": " YOHANNES ",
+        "gpa": "2.1131 GRADE C (GOOD)",
+        "position": "167"
+    },
+    {
+        "name": " MNYAMBE ",
+        "gpa": "2.1160 GRADE C (GOOD)",
+        "position": "168"
+    },
+    {
+        "name": " ENDASAK ",
+        "gpa": "2.1212 GRADE C (GOOD)",
+        "position": "169"
+    },
+    {
+        "name": " MWAZYE ",
+        "gpa": "2.1229 GRADE C (GOOD)",
+        "position": "170"
+    },
+    {
+        "name": " BWABUKI ",
+        "gpa": "2.1230 GRADE C (GOOD)",
+        "position": "171"
+    },
+    {
+        "name": " BEREGA ",
+        "gpa": "2.1282 GRADE C (GOOD)",
+        "position": "172"
+    },
+    {
+        "name": " NAINOKANOKA ",
+        "gpa": "2.1333 GRADE C (GOOD)",
+        "position": "173"
+    },
+    {
+        "name": " EMBARWAY ",
+        "gpa": "2.1347 GRADE C (GOOD)",
+        "position": "174"
+    },
+    {
+        "name": " KOWAK GIRLS' ",
+        "gpa": "2.1364 GRADE C (GOOD)",
+        "position": "175"
+    },
+    {
+        "name": " NYABISHENGE ",
+        "gpa": "2.1364 GRADE C (GOOD)",
+        "position": "176"
+    },
+    {
+        "name": " JENERALI DAVID MSUGULI ",
+        "gpa": "2.1374 GRADE C (GOOD)",
+        "position": "177"
+    },
+    {
+        "name": " MAGNIFICAT ",
+        "gpa": "2.1375 GRADE C (GOOD)",
+        "position": "178"
+    },
+    {
+        "name": " NYAMUNGA ",
+        "gpa": "2.1412 GRADE C (GOOD)",
+        "position": "179"
+    },
+    {
+        "name": " ABOUD JUMBE ",
+        "gpa": "2.1414 GRADE C (GOOD)",
+        "position": "180"
+    },
+    {
+        "name": " BUTURI ",
+        "gpa": "2.1417 GRADE C (GOOD)",
+        "position": "181"
+    },
+    {
+        "name": " MBUGWE ",
+        "gpa": "2.1418 GRADE C (GOOD)",
+        "position": "182"
+    },
+    {
+        "name": " RUANDA ",
+        "gpa": "2.1440 GRADE C (GOOD)",
+        "position": "183"
+    },
+    {
+        "name": " TANDAHIMBA ",
+        "gpa": "2.1447 GRADE C (GOOD)",
+        "position": "184"
+    },
+    {
+        "name": " KALIUA ",
+        "gpa": "2.1467 GRADE C (GOOD)",
+        "position": "185"
+    },
+    {
+        "name": " BIDII ",
+        "gpa": "2.1500 GRADE C (GOOD)",
+        "position": "186"
+    },
+    {
+        "name": " MUUNGANO BOYS ",
+        "gpa": "2.1512 GRADE C (GOOD)",
+        "position": "187"
+    },
+    {
+        "name": " UCHAMA ",
+        "gpa": "2.1531 GRADE C (GOOD)",
+        "position": "188"
+    },
+    {
+        "name": " MASAMA GIRLS' ",
+        "gpa": "2.1548 GRADE C (GOOD)",
+        "position": "189"
+    },
+    {
+        "name": " ENABOISHU ",
+        "gpa": "2.1549 GRADE C (GOOD)",
+        "position": "190"
+    },
+    {
+        "name": " NSHAMBA ",
+        "gpa": "2.1563 GRADE C (GOOD)",
+        "position": "191"
+    },
+    {
+        "name": " SALESIAN SEMINARY",
+        "gpa": "2.1591 GRADE C (GOOD)",
+        "position": "192"
+    },
+    {
+        "name": " RUNGWE ",
+        "gpa": "2.1601 GRADE C (GOOD)",
+        "position": "193"
+    },
+    {
+        "name": " LORETO GIRLS' ",
+        "gpa": "2.1609 GRADE C (GOOD)",
+        "position": "194"
+    },
+    {
+        "name": " KILWA ",
+        "gpa": "2.1616 GRADE C (GOOD)",
+        "position": "195"
+    },
+    {
+        "name": " VUDOI ",
+        "gpa": "2.1655 GRADE C (GOOD)",
+        "position": "196"
+    },
+    {
+        "name": " MKINGA ",
+        "gpa": "2.1667 GRADE C (GOOD)",
+        "position": "197"
+    },
+    {
+        "name": " JULIUS KAMBARAGE NYERERE ",
+        "gpa": "2.1667 GRADE C (GOOD)",
+        "position": "198"
+    },
+    {
+        "name": " ILONGERO ",
+        "gpa": "2.1684 GRADE C (GOOD)",
+        "position": "199"
+    },
+    {
+        "name": " CHIEF IHUNYO ",
+        "gpa": "2.1694 GRADE C (GOOD)",
+        "position": "200"
+    },
+    {
+        "name": " NANGA ",
+        "gpa": "2.1719 GRADE C (GOOD)",
+        "position": "201"
+    },
+    {
+        "name": " MBEKENYERA ",
+        "gpa": "2.1745 GRADE C (GOOD)",
+        "position": "202"
+    },
+    {
+        "name": " LYAMUNGO ",
+        "gpa": "2.1764 GRADE C (GOOD)",
+        "position": "203"
+    },
+    {
+        "name": " LOLIONDO ",
+        "gpa": "2.1784 GRADE C (GOOD)",
+        "position": "204"
+    },
+    {
+        "name": " ASHIRA ",
+        "gpa": "2.1787 GRADE C (GOOD)",
+        "position": "205"
+    },
+    {
+        "name": " INGWE ",
+        "gpa": "2.1795 GRADE C (GOOD)",
+        "position": "206"
+    },
+    {
+        "name": " ST.ACHILLEUS KIWANUKA KIJWIRE ",
+        "gpa": "2.1795 GRADE C (GOOD)",
+        "position": "207"
+    },
+    {
+        "name": " KIBITI ",
+        "gpa": "2.1798 GRADE C (GOOD)",
+        "position": "208"
+    },
+    {
+        "name": " MOROGORO ",
+        "gpa": "2.1805 GRADE C (GOOD)",
+        "position": "209"
+    },
+    {
+        "name": " CHIUNGUTWA ",
+        "gpa": "2.1807 GRADE C (GOOD)",
+        "position": "210"
+    },
+    {
+        "name": " MRINGA ",
+        "gpa": "2.1867 GRADE C (GOOD)",
+        "position": "211"
+    },
+    {
+        "name": " LUPA ",
+        "gpa": "2.1878 GRADE C (GOOD)",
+        "position": "212"
+    },
+    {
+        "name": " MAJI YA CHAI ",
+        "gpa": "2.1881 GRADE C (GOOD)",
+        "position": "213"
+    },
+    {
+        "name": " GANAKO ",
+        "gpa": "2.1899 GRADE C (GOOD)",
+        "position": "214"
+    },
+    {
+        "name": " NAMWAI ",
+        "gpa": "2.1905 GRADE C (GOOD)",
+        "position": "215"
+    },
+    {
+        "name": " LINDI ",
+        "gpa": "2.1911 GRADE C (GOOD)",
+        "position": "216"
+    },
+    {
+        "name": " RUHUWIKO ",
+        "gpa": "2.1922 GRADE C (GOOD)",
+        "position": "217"
+    },
+    {
+        "name": " BRIGHT FUTURE GIRLS ",
+        "gpa": "2.1923 GRADE C (GOOD)",
+        "position": "218"
+    },
+    {
+        "name": " VANESSA ",
+        "gpa": "2.1926 GRADE C (GOOD)",
+        "position": "219"
+    },
+    {
+        "name": " OSHARA ",
+        "gpa": "2.1934 GRADE C (GOOD)",
+        "position": "220"
+    },
+    {
+        "name": " SIKIRARI ",
+        "gpa": "2.2000 GRADE C (GOOD)",
+        "position": "221"
+    },
+    {
+        "name": " MAGU ",
+        "gpa": "2.2011 GRADE C (GOOD)",
+        "position": "222"
+    },
+    {
+        "name": " BUKAMA ",
+        "gpa": "2.2053 GRADE C (GOOD)",
+        "position": "223"
+    },
+    {
+        "name": " NYAMPULUKANO ",
+        "gpa": "2.2057 GRADE C (GOOD)",
+        "position": "224"
+    },
+    {
+        "name": " TUMAINI ",
+        "gpa": "2.2089 GRADE C (GOOD)",
+        "position": "225"
+    },
+    {
+        "name": " NDANDA ",
+        "gpa": "2.2138 GRADE C (GOOD)",
+        "position": "226"
+    },
+    {
+        "name": " PANDAHILL ",
+        "gpa": "2.2142 GRADE C (GOOD)",
+        "position": "227"
+    },
+    {
+        "name": " MAMIRE ",
+        "gpa": "2.2143 GRADE C (GOOD)",
+        "position": "228"
+    },
+    {
+        "name": " KIGONIGONI ",
+        "gpa": "2.2161 GRADE C (GOOD)",
+        "position": "229"
+    },
+    {
+        "name": " KIJOTA HULL HIGH SCHOOL",
+        "gpa": "2.2182 GRADE C (GOOD)",
+        "position": "230"
+    },
+    {
+        "name": " DENIS ",
+        "gpa": "2.2190 GRADE C (GOOD)",
+        "position": "231"
+    },
+    {
+        "name": " MISSUNGWI ",
+        "gpa": "2.2201 GRADE C (GOOD)",
+        "position": "232"
+    },
+    {
+        "name": " TUKUYU ",
+        "gpa": "2.2212 GRADE C (GOOD)",
+        "position": "233"
+    },
+    {
+        "name": " MSANGENI ",
+        "gpa": "2.2228 GRADE C (GOOD)",
+        "position": "234"
+    },
+    {
+        "name": " TUSIIME ",
+        "gpa": "2.2235 GRADE C (GOOD)",
+        "position": "235"
+    },
+    {
+        "name": " MAGAMBA ",
+        "gpa": "2.2249 GRADE C (GOOD)",
+        "position": "236"
+    },
+    {
+        "name": " UNYANYEMBE ",
+        "gpa": "2.2273 GRADE C (GOOD)",
+        "position": "237"
+    },
+    {
+        "name": " BARIADI ",
+        "gpa": "2.2293 GRADE C (GOOD)",
+        "position": "238"
+    },
+    {
+        "name": " MAGHABE ",
+        "gpa": "2.2312 GRADE C (GOOD)",
+        "position": "239"
+    },
+    {
+        "name": " ST.MAURUS CHEMCHEMI ",
+        "gpa": "2.2321 GRADE C (GOOD)",
+        "position": "240"
+    },
+    {
+        "name": " NAZARENE ",
+        "gpa": "2.2323 GRADE C (GOOD)",
+        "position": "241"
+    },
+    {
+        "name": " HAWA MCHOPA ",
+        "gpa": "2.2325 GRADE C (GOOD)",
+        "position": "242"
+    },
+    {
+        "name": " PIUS MSEKWA ",
+        "gpa": "2.2326 GRADE C (GOOD)",
+        "position": "243"
+    },
+    {
+        "name": " KYERWA BRIGHT STAR ",
+        "gpa": "2.2333 GRADE C (GOOD)",
+        "position": "244"
+    },
+    {
+        "name": " MTINKO ",
+        "gpa": "2.2340 GRADE C (GOOD)",
+        "position": "245"
+    },
+    {
+        "name": " ABDULRAHIM BUSOKA ",
+        "gpa": "2.2356 GRADE C (GOOD)",
+        "position": "246"
+    },
+    {
+        "name": " KAFULE ",
+        "gpa": "2.2358 GRADE C (GOOD)",
+        "position": "247"
+    },
+    {
+        "name": " CANAAN ",
+        "gpa": "2.2372 GRADE C (GOOD)",
+        "position": "248"
+    },
+    {
+        "name": " BARBRO-JOHANSSON ",
+        "gpa": "2.2374 GRADE C (GOOD)",
+        "position": "249"
+    },
+    {
+        "name": " ZANZIBAR FEZA ",
+        "gpa": "2.2381 GRADE C (GOOD)",
+        "position": "250"
+    },
+    {
+        "name": " MASONYA ",
+        "gpa": "2.2384 GRADE C (GOOD)",
+        "position": "251"
+    },
+    {
+        "name": " PADUCAH HILL ",
+        "gpa": "2.2387 GRADE C (GOOD)",
+        "position": "252"
+    },
+    {
+        "name": " KALANGALALA ",
+        "gpa": "2.2416 GRADE C (GOOD)",
+        "position": "253"
+    },
+    {
+        "name": " MATEMA BEACH ",
+        "gpa": "2.2417 GRADE C (GOOD)",
+        "position": "254"
+    },
+    {
+        "name": " KOROGWE GIRLS' ",
+        "gpa": "2.2433 GRADE C (GOOD)",
+        "position": "255"
+    },
+    {
+        "name": " KILANGALANGA ",
+        "gpa": "2.2442 GRADE C (GOOD)",
+        "position": "256"
+    },
+    {
+        "name": " MUSOMA UTALII ",
+        "gpa": "2.2460 GRADE C (GOOD)",
+        "position": "257"
+    },
+    {
+        "name": " GEITA ",
+        "gpa": "2.2464 GRADE C (GOOD)",
+        "position": "258"
+    },
+    {
+        "name": " KIBAIGWA GIRLS ",
+        "gpa": "2.2486 GRADE C (GOOD)",
+        "position": "259"
+    },
+    {
+        "name": " J.J.MUNGAI ",
+        "gpa": "2.2492 GRADE C (GOOD)",
+        "position": "260"
+    },
+    {
+        "name": " KONGEI ",
+        "gpa": "2.2500 GRADE C (GOOD)",
+        "position": "261"
+    },
+    {
+        "name": " ITULAHUMBA ",
+        "gpa": "2.2500 GRADE C (GOOD)",
+        "position": "262"
+    },
+    {
+        "name": " NSUMBA ",
+        "gpa": "2.2525 GRADE C (GOOD)",
+        "position": "263"
+    },
+    {
+        "name": " GOLDEN RIDGE ",
+        "gpa": "2.2538 GRADE C (GOOD)",
+        "position": "264"
+    },
+    {
+        "name": " HAI ",
+        "gpa": "2.2553 GRADE C (GOOD)",
+        "position": "265"
+    },
+    {
+        "name": " NKOWE ",
+        "gpa": "2.2563 GRADE C (GOOD)",
+        "position": "266"
+    },
+    {
+        "name": " NYAKATO ",
+        "gpa": "2.2576 GRADE C (GOOD)",
+        "position": "267"
+    },
+    {
+        "name": " LUMUMBA ",
+        "gpa": "2.2583 GRADE C (GOOD)",
+        "position": "268"
+    },
+    {
+        "name": " RUANGWA ",
+        "gpa": "2.2590 GRADE C (GOOD)",
+        "position": "269"
+    },
+    {
+        "name": " KIFUNGILO GIRLS' ",
+        "gpa": "2.2625 GRADE C (GOOD)",
+        "position": "270"
+    },
+    {
+        "name": " BISHOP DURNING HIGH SCHOOL",
+        "gpa": "2.2626 GRADE C (GOOD)",
+        "position": "271"
+    },
+    {
+        "name": " BONICONSILI MABAMBA GIRLS' ",
+        "gpa": "2.2667 GRADE C (GOOD)",
+        "position": "272"
+    },
+    {
+        "name": " MDABULO ",
+        "gpa": "2.2667 GRADE C (GOOD)",
+        "position": "273"
+    },
+    {
+        "name": " MBONEA ",
+        "gpa": "2.2667 GRADE C (GOOD)",
+        "position": "274"
+    },
+    {
+        "name": " KAGANGO ",
+        "gpa": "2.2672 GRADE C (GOOD)",
+        "position": "275"
+    },
+    {
+        "name": " MINZIRO ",
+        "gpa": "2.2672 GRADE C (GOOD)",
+        "position": "276"
+    },
+    {
+        "name": " HURUMA GIRLS' ",
+        "gpa": "2.2679 GRADE C (GOOD)",
+        "position": "277"
+    },
+    {
+        "name": " CHIEF KIDULILE ",
+        "gpa": "2.2694 GRADE C (GOOD)",
+        "position": "278"
+    },
+    {
+        "name": " KASAMWA ",
+        "gpa": "2.2712 GRADE C (GOOD)",
+        "position": "279"
+    },
+    {
+        "name": " NTABA ",
+        "gpa": "2.2738 GRADE C (GOOD)",
+        "position": "280"
+    },
+    {
+        "name": " MAKONGORO ",
+        "gpa": "2.2759 GRADE C (GOOD)",
+        "position": "281"
+    },
+    {
+        "name": " MBAGALA ",
+        "gpa": "2.2760 GRADE C (GOOD)",
+        "position": "282"
+    },
+    {
+        "name": " ST. PETER CLAVER ",
+        "gpa": "2.2760 GRADE C (GOOD)",
+        "position": "283"
+    },
+    {
+        "name": " KATE ",
+        "gpa": "2.2829 GRADE C (GOOD)",
+        "position": "284"
+    },
+    {
+        "name": " TUNDURU ",
+        "gpa": "2.2850 GRADE C (GOOD)",
+        "position": "285"
+    },
+    {
+        "name": " MORINGE SOKOINE ",
+        "gpa": "2.2862 GRADE C (GOOD)",
+        "position": "286"
+    },
+    {
+        "name": " ST.MARY GORETI ",
+        "gpa": "2.2877 GRADE C (GOOD)",
+        "position": "287"
+    },
+    {
+        "name": " BUNGU ",
+        "gpa": "2.2888 GRADE C (GOOD)",
+        "position": "288"
+    },
+    {
+        "name": " AILANGA LUTHERAN JUNIOR SEMINARY",
+        "gpa": "2.2917 GRADE C (GOOD)",
+        "position": "289"
+    },
+    {
+        "name": " BOGWE ",
+        "gpa": "2.2919 GRADE C (GOOD)",
+        "position": "290"
+    },
+    {
+        "name": " HEBRON ",
+        "gpa": "2.2925 GRADE C (GOOD)",
+        "position": "291"
+    },
+    {
+        "name": " SENGEREMA ",
+        "gpa": "2.2929 GRADE C (GOOD)",
+        "position": "292"
+    },
+    {
+        "name": " MOMBO ",
+        "gpa": "2.2944 GRADE C (GOOD)",
+        "position": "293"
+    },
+    {
+        "name": " NYARUBANDA ",
+        "gpa": "2.2947 GRADE C (GOOD)",
+        "position": "294"
+    },
+    {
+        "name": " KIRIKI ",
+        "gpa": "2.2949 GRADE C (GOOD)",
+        "position": "295"
+    },
+    {
+        "name": " ISINGIRO ",
+        "gpa": "2.2949 GRADE C (GOOD)",
+        "position": "296"
+    },
+    {
+        "name": " KASHISHI ",
+        "gpa": "2.2954 GRADE C (GOOD)",
+        "position": "297"
+    },
+    {
+        "name": " IHUNGO ",
+        "gpa": "2.2966 GRADE C (GOOD)",
+        "position": "298"
+    },
+    {
+        "name": " ARUSHA GIRLS' ",
+        "gpa": "2.2975 GRADE C (GOOD)",
+        "position": "299"
+    },
+    {
+        "name": " MATAKA ",
+        "gpa": "2.2979 GRADE C (GOOD)",
+        "position": "300"
+    },
+    {
+        "name": " SOKOINE MEMORIAL ",
+        "gpa": "2.2991 GRADE C (GOOD)",
+        "position": "301"
+    },
+    {
+        "name": " KIFARU ",
+        "gpa": "2.3015 GRADE C (GOOD)",
+        "position": "302"
+    },
+    {
+        "name": " MUSTAFA SABODO ",
+        "gpa": "2.3016 GRADE C (GOOD)",
+        "position": "303"
+    },
+    {
+        "name": " URU SEMINARY",
+        "gpa": "2.3025 GRADE C (GOOD)",
+        "position": "304"
+    },
+    {
+        "name": " MBELEI ",
+        "gpa": "2.3026 GRADE C (GOOD)",
+        "position": "305"
+    },
+    {
+        "name": " GRACE ",
+        "gpa": "2.3056 GRADE C (GOOD)",
+        "position": "306"
+    },
+    {
+        "name": " MBEZI ",
+        "gpa": "2.3082 GRADE C (GOOD)",
+        "position": "307"
+    },
+    {
+        "name": " KIZUKA ",
+        "gpa": "2.3086 GRADE C (GOOD)",
+        "position": "308"
+    },
+    {
+        "name": " MAGUFULI ",
+        "gpa": "2.3097 GRADE C (GOOD)",
+        "position": "309"
+    },
+    {
+        "name": " NKASI ",
+        "gpa": "2.3111 GRADE C (GOOD)",
+        "position": "310"
+    },
+    {
+        "name": " KANYIGO ",
+        "gpa": "2.3114 GRADE C (GOOD)",
+        "position": "311"
+    },
+    {
+        "name": " MWANZI ",
+        "gpa": "2.3117 GRADE C (GOOD)",
+        "position": "312"
+    },
+    {
+        "name": " EMMABERG GIRLS' ",
+        "gpa": "2.3148 GRADE C (GOOD)",
+        "position": "313"
+    },
+    {
+        "name": " MPOROTO ",
+        "gpa": "2.3155 GRADE C (GOOD)",
+        "position": "314"
+    },
+    {
+        "name": " VUMA ",
+        "gpa": "2.3155 GRADE C (GOOD)",
+        "position": "315"
+    },
+    {
+        "name": " TANZANIA ADVENTIST ",
+        "gpa": "2.3158 GRADE C (GOOD)",
+        "position": "316"
+    },
+    {
+        "name": " MWALIMU J K NYERERE ",
+        "gpa": "2.3160 GRADE C (GOOD)",
+        "position": "317"
+    },
+    {
+        "name": " KIBONDO ",
+        "gpa": "2.3180 GRADE C (GOOD)",
+        "position": "318"
+    },
+    {
+        "name": " MKULA ",
+        "gpa": "2.3235 GRADE C (GOOD)",
+        "position": "319"
+    },
+    {
+        "name": " IGUGUNO ",
+        "gpa": "2.3241 GRADE C (GOOD)",
+        "position": "320"
+    },
+    {
+        "name": " NDWIKA GIRLS' ",
+        "gpa": "2.3242 GRADE C (GOOD)",
+        "position": "321"
+    },
+    {
+        "name": " ST.JOSEPH'S CATHEDRAL ",
+        "gpa": "2.3244 GRADE C (GOOD)",
+        "position": "322"
+    },
+    {
+        "name": " NAMABENGO ",
+        "gpa": "2.3268 GRADE C (GOOD)",
+        "position": "323"
+    },
+    {
+        "name": " MINAKI ",
+        "gpa": "2.3275 GRADE C (GOOD)",
+        "position": "324"
+    },
+    {
+        "name": " MWANALUGALI ",
+        "gpa": "2.3275 GRADE C (GOOD)",
+        "position": "325"
+    },
+    {
+        "name": " KITETO ",
+        "gpa": "2.3314 GRADE C (GOOD)",
+        "position": "326"
+    },
+    {
+        "name": " HIJRA SEMINARY ",
+        "gpa": "2.3333 GRADE C (GOOD)",
+        "position": "327"
+    },
+    {
+        "name": " KANADI ",
+        "gpa": "2.3333 GRADE C (GOOD)",
+        "position": "328"
+    },
+    {
+        "name": " HERI ",
+        "gpa": "2.3333 GRADE C (GOOD)",
+        "position": "329"
+    },
+    {
+        "name": " MWANZA ",
+        "gpa": "2.3345 GRADE C (GOOD)",
+        "position": "330"
+    },
+    {
+        "name": " CHATO ",
+        "gpa": "2.3349 GRADE C (GOOD)",
+        "position": "331"
+    },
+    {
+        "name": " ENGUTOTO ",
+        "gpa": "2.3372 GRADE C (GOOD)",
+        "position": "332"
+    },
+    {
+        "name": " MPUI ",
+        "gpa": "2.3400 GRADE C (GOOD)",
+        "position": "333"
+    },
+    {
+        "name": " RUJEWA ",
+        "gpa": "2.3413 GRADE C (GOOD)",
+        "position": "334"
+    },
+    {
+        "name": " SHINYANGA ",
+        "gpa": "2.3414 GRADE C (GOOD)",
+        "position": "335"
+    },
+    {
+        "name": " GOMBE HIGH SCHOOL",
+        "gpa": "2.3438 GRADE C (GOOD)",
+        "position": "336"
+    },
+    {
+        "name": " NYANGAO ",
+        "gpa": "2.3462 GRADE C (GOOD)",
+        "position": "337"
+    },
+    {
+        "name": " SINGE ",
+        "gpa": "2.3465 GRADE C (GOOD)",
+        "position": "338"
+    },
+    {
+        "name": " MAKONGO ",
+        "gpa": "2.3476 GRADE C (GOOD)",
+        "position": "339"
+    },
+    {
+        "name": " BUNAZI ",
+        "gpa": "2.3488 GRADE C (GOOD)",
+        "position": "340"
+    },
+    {
+        "name": " MISIMA ",
+        "gpa": "2.3500 GRADE C (GOOD)",
+        "position": "341"
+    },
+    {
+        "name": " THOMAS MORE MACHRINA ",
+        "gpa": "2.3542 GRADE C (GOOD)",
+        "position": "342"
+    },
+    {
+        "name": " KIPETA ",
+        "gpa": "2.3559 GRADE C (GOOD)",
+        "position": "343"
+    },
+    {
+        "name": " JAMHURI ",
+        "gpa": "2.3584 GRADE C (GOOD)",
+        "position": "344"
+    },
+    {
+        "name": " KIZWITE ",
+        "gpa": "2.3596 GRADE C (GOOD)",
+        "position": "345"
+    },
+    {
+        "name": " MANGAKA ",
+        "gpa": "2.3608 GRADE C (GOOD)",
+        "position": "346"
+    },
+    {
+        "name": " ALLIANCE BOYS' ",
+        "gpa": "2.3611 GRADE C (GOOD)",
+        "position": "347"
+    },
+    {
+        "name": " NAISINYAI ",
+        "gpa": "2.3636 GRADE C (GOOD)",
+        "position": "348"
+    },
+    {
+        "name": " AIRPORT ",
+        "gpa": "2.3651 GRADE C (GOOD)",
+        "position": "349"
+    },
+    {
+        "name": " NANGWANDA GIRLS' ",
+        "gpa": "2.3670 GRADE C (GOOD)",
+        "position": "350"
+    },
+    {
+        "name": " LUKOLE ",
+        "gpa": "2.3671 GRADE C (GOOD)",
+        "position": "351"
+    },
+    {
+        "name": " NYAKAHURA ",
+        "gpa": "2.3688 GRADE C (GOOD)",
+        "position": "352"
+    },
+    {
+        "name": " MWERA ",
+        "gpa": "2.3697 GRADE C (GOOD)",
+        "position": "353"
+    },
+    {
+        "name": " MWANAKWEREKWE 'C' ",
+        "gpa": "2.3719 GRADE C (GOOD)",
+        "position": "354"
+    },
+    {
+        "name": " OSWE ",
+        "gpa": "2.3725 GRADE C (GOOD)",
+        "position": "355"
+    },
+    {
+        "name": " MPWAPWA ",
+        "gpa": "2.3747 GRADE C (GOOD)",
+        "position": "356"
+    },
+    {
+        "name": " MWEMBETOGWA ",
+        "gpa": "2.3763 GRADE C (GOOD)",
+        "position": "357"
+    },
+    {
+        "name": " MAMBWE ",
+        "gpa": "2.3769 GRADE C (GOOD)",
+        "position": "358"
+    },
+    {
+        "name": " BAOBAB ",
+        "gpa": "2.3770 GRADE C (GOOD)",
+        "position": "359"
+    },
+    {
+        "name": " MBEYA ",
+        "gpa": "2.3771 GRADE C (GOOD)",
+        "position": "360"
+    },
+    {
+        "name": " MALANGALI ",
+        "gpa": "2.3785 GRADE C (GOOD)",
+        "position": "361"
+    },
+    {
+        "name": " ACACIA ",
+        "gpa": "2.3796 GRADE C (GOOD)",
+        "position": "362"
+    },
+    {
+        "name": " ITIGI ",
+        "gpa": "2.3816 GRADE C (GOOD)",
+        "position": "363"
+    },
+    {
+        "name": " MGOLOLO ",
+        "gpa": "2.3819 GRADE C (GOOD)",
+        "position": "364"
+    },
+    {
+        "name": " SONGA ",
+        "gpa": "2.3821 GRADE C (GOOD)",
+        "position": "365"
+    },
+    {
+        "name": " SANTHOME SABS ",
+        "gpa": "2.3827 GRADE C (GOOD)",
+        "position": "366"
+    },
+    {
+        "name": " NAMFUA ",
+        "gpa": "2.3889 GRADE C (GOOD)",
+        "position": "367"
+    },
+    {
+        "name": " MKONGO ",
+        "gpa": "2.3897 GRADE C (GOOD)",
+        "position": "368"
+    },
+    {
+        "name": " LUKIMA ",
+        "gpa": "2.3905 GRADE C (GOOD)",
+        "position": "369"
+    },
+    {
+        "name": " CHIDYA ",
+        "gpa": "2.3932 GRADE C (GOOD)",
+        "position": "370"
+    },
+    {
+        "name": " RUVU ",
+        "gpa": "2.3934 GRADE C (GOOD)",
+        "position": "371"
+    },
+    {
+        "name": " MIKWAMBE ",
+        "gpa": "2.3936 GRADE C (GOOD)",
+        "position": "372"
+    },
+    {
+        "name": " SONGEA BOYS' ",
+        "gpa": "2.3938 GRADE C (GOOD)",
+        "position": "373"
+    },
+    {
+        "name": " VISITATION GIRLS' ",
+        "gpa": "2.3941 GRADE C (GOOD)",
+        "position": "374"
+    },
+    {
+        "name": " DINOBB  HIGH SCHOOL",
+        "gpa": "2.3944 GRADE C (GOOD)",
+        "position": "375"
+    },
+    {
+        "name": " NJOMBE ",
+        "gpa": "2.3953 GRADE C (GOOD)",
+        "position": "376"
+    },
+    {
+        "name": " EMBOREET ",
+        "gpa": "2.3954 GRADE C (GOOD)",
+        "position": "377"
+    },
+    {
+        "name": " VWAWA ",
+        "gpa": "2.3957 GRADE C (GOOD)",
+        "position": "378"
+    },
+    {
+        "name": " MARANGU ",
+        "gpa": "2.3965 GRADE C (GOOD)",
+        "position": "379"
+    },
+    {
+        "name": " LUCAS MALIA ",
+        "gpa": "2.3974 GRADE C (GOOD)",
+        "position": "380"
+    },
+    {
+        "name": " WAAMUZI ",
+        "gpa": "2.3988 GRADE C (GOOD)",
+        "position": "381"
+    },
+    {
+        "name": " KILUVYA ",
+        "gpa": "2.3990 GRADE C (GOOD)",
+        "position": "382"
+    },
+    {
+        "name": " TOSAMAGANGA ",
+        "gpa": "2.3992 GRADE C (GOOD)",
+        "position": "383"
+    },
+    {
+        "name": " AQUINAS ",
+        "gpa": "2.4008 GRADE C (GOOD)",
+        "position": "384"
+    },
+    {
+        "name": " MUNDINDI ",
+        "gpa": "2.4008 GRADE C (GOOD)",
+        "position": "385"
+    },
+    {
+        "name": " KONDOA GIRLS' ",
+        "gpa": "2.4010 GRADE C (GOOD)",
+        "position": "386"
+    },
+    {
+        "name": " MALAGARASI ",
+        "gpa": "2.4011 GRADE C (GOOD)",
+        "position": "387"
+    },
+    {
+        "name": " WAMA-NAKAYAMA ",
+        "gpa": "2.4016 GRADE C (GOOD)",
+        "position": "388"
+    },
+    {
+        "name": " ARUSHA TURKISH MAARIF ",
+        "gpa": "2.4020 GRADE C (GOOD)",
+        "position": "389"
+    },
+    {
+        "name": " UWEMBA ",
+        "gpa": "2.4038 GRADE C (GOOD)",
+        "position": "390"
+    },
+    {
+        "name": " KAREMA ",
+        "gpa": "2.4053 GRADE C (GOOD)",
+        "position": "391"
+    },
+    {
+        "name": " GALANOS ",
+        "gpa": "2.4054 GRADE C (GOOD)",
+        "position": "392"
+    },
+    {
+        "name": " RULENGE ",
+        "gpa": "2.4056 GRADE C (GOOD)",
+        "position": "393"
+    },
+    {
+        "name": " KYELA ",
+        "gpa": "2.4063 GRADE C (GOOD)",
+        "position": "394"
+    },
+    {
+        "name": " MLANGALI ",
+        "gpa": "2.4063 GRADE C (GOOD)",
+        "position": "395"
+    },
+    {
+        "name": " RAFSANJANI-SOGA ",
+        "gpa": "2.4078 GRADE C (GOOD)",
+        "position": "396"
+    },
+    {
+        "name": " LWANGWA ",
+        "gpa": "2.4103 GRADE C (GOOD)",
+        "position": "397"
+    },
+    {
+        "name": " BWIRU BOYS' ",
+        "gpa": "2.4112 GRADE C (GOOD)",
+        "position": "398"
+    },
+    {
+        "name": " IRKISONGO ",
+        "gpa": "2.4116 GRADE C (GOOD)",
+        "position": "399"
+    },
+    {
+        "name": " KAYUKI ",
+        "gpa": "2.4129 GRADE C (GOOD)",
+        "position": "400"
+    },
+    {
+        "name": " BWIRU GIRLS' ",
+        "gpa": "2.4140 GRADE C (GOOD)",
+        "position": "401"
+    },
+    {
+        "name": " MWIKA ",
+        "gpa": "2.4161 GRADE C (GOOD)",
+        "position": "402"
+    },
+    {
+        "name": " ILULU ",
+        "gpa": "2.4191 GRADE C (GOOD)",
+        "position": "403"
+    },
+    {
+        "name": " MAZWI ",
+        "gpa": "2.4200 GRADE C (GOOD)",
+        "position": "404"
+    },
+    {
+        "name": " MOSHI TECHNICAL ",
+        "gpa": "2.4210 GRADE C (GOOD)",
+        "position": "405"
+    },
+    {
+        "name": " SAMUNGE ",
+        "gpa": "2.4212 GRADE C (GOOD)",
+        "position": "406"
+    },
+    {
+        "name": " ST.MARY'S JUNIOR SEMINARY",
+        "gpa": "2.4216 GRADE C (GOOD)",
+        "position": "407"
+    },
+    {
+        "name": " ALI HASSAN MWINYI ",
+        "gpa": "2.4217 GRADE C (GOOD)",
+        "position": "408"
+    },
+    {
+        "name": " SADANI  ",
+        "gpa": "2.4223 GRADE C (GOOD)",
+        "position": "409"
+    },
+    {
+        "name": " MESSA ",
+        "gpa": "2.4249 GRADE C (GOOD)",
+        "position": "410"
+    },
+    {
+        "name": " IDODI ",
+        "gpa": "2.4274 GRADE C (GOOD)",
+        "position": "411"
+    },
+    {
+        "name": " MNYUZI ",
+        "gpa": "2.4274 GRADE C (GOOD)",
+        "position": "412"
+    },
+    {
+        "name": " UKEREWE ",
+        "gpa": "2.4275 GRADE C (GOOD)",
+        "position": "413"
+    },
+    {
+        "name": " MASASI GIRLS' ",
+        "gpa": "2.4292 GRADE C (GOOD)",
+        "position": "414"
+    },
+    {
+        "name": " IWAWA ",
+        "gpa": "2.4303 GRADE C (GOOD)",
+        "position": "415"
+    },
+    {
+        "name": " CHANG'OMBE ",
+        "gpa": "2.4304 GRADE C (GOOD)",
+        "position": "416"
+    },
+    {
+        "name": " ITAGA SEMINARY",
+        "gpa": "2.4314 GRADE C (GOOD)",
+        "position": "417"
+    },
+    {
+        "name": " GENDA ",
+        "gpa": "2.4317 GRADE C (GOOD)",
+        "position": "418"
+    },
+    {
+        "name": " MASWA GIRLS' ",
+        "gpa": "2.4318 GRADE C (GOOD)",
+        "position": "419"
+    },
+    {
+        "name": " BULUNDE ",
+        "gpa": "2.4322 GRADE C (GOOD)",
+        "position": "420"
+    },
+    {
+        "name": " ILEJE ",
+        "gpa": "2.4355 GRADE C (GOOD)",
+        "position": "421"
+    },
+    {
+        "name": " KANTALAMBA ",
+        "gpa": "2.4365 GRADE C (GOOD)",
+        "position": "422"
+    },
+    {
+        "name": " SHAURITANGA ",
+        "gpa": "2.4366 GRADE C (GOOD)",
+        "position": "423"
+    },
+    {
+        "name": " NYERERE HIGH SCHOOL-MIGOLI",
+        "gpa": "2.4366 GRADE C (GOOD)",
+        "position": "424"
+    },
+    {
+        "name": " FIDEL CASTRO ",
+        "gpa": "2.4386 GRADE C (GOOD)",
+        "position": "425"
+    },
+    {
+        "name": " AN-NOOR ISLAMIC BOYS SEMINARY",
+        "gpa": "2.4394 GRADE C (GOOD)",
+        "position": "426"
+    },
+    {
+        "name": " HUMURA ",
+        "gpa": "2.4406 GRADE C (GOOD)",
+        "position": "427"
+    },
+    {
+        "name": " ROSMINI ",
+        "gpa": "2.4412 GRADE C (GOOD)",
+        "position": "428"
+    },
+    {
+        "name": " KIGWE ",
+        "gpa": "2.4412 GRADE C (GOOD)",
+        "position": "429"
+    },
+    {
+        "name": " MINJA ",
+        "gpa": "2.4444 GRADE C (GOOD)",
+        "position": "430"
+    },
+    {
+        "name": " ITENDE ",
+        "gpa": "2.4444 GRADE C (GOOD)",
+        "position": "431"
+    },
+    {
+        "name": " ITILIMA ",
+        "gpa": "2.4450 GRADE C (GOOD)",
+        "position": "432"
+    },
+    {
+        "name": " WANGING'OMBE ",
+        "gpa": "2.4454 GRADE C (GOOD)",
+        "position": "433"
+    },
+    {
+        "name": " MTIMBWE ",
+        "gpa": "2.4457 GRADE C (GOOD)",
+        "position": "434"
+    },
+    {
+        "name": " BALILI ",
+        "gpa": "2.4474 GRADE C (GOOD)",
+        "position": "435"
+    },
+    {
+        "name": " MANYUNYU ",
+        "gpa": "2.4476 GRADE C (GOOD)",
+        "position": "436"
+    },
+    {
+        "name": " ARUSHA ",
+        "gpa": "2.4477 GRADE C (GOOD)",
+        "position": "437"
+    },
+    {
+        "name": " MAFIGA ",
+        "gpa": "2.4486 GRADE C (GOOD)",
+        "position": "438"
+    },
+    {
+        "name": " NYEHUNGE ",
+        "gpa": "2.4499 GRADE C (GOOD)",
+        "position": "439"
+    },
+    {
+        "name": " LOMWE ",
+        "gpa": "2.4500 GRADE C (GOOD)",
+        "position": "440"
+    },
+    {
+        "name": " ALPHA GIRLS ",
+        "gpa": "2.4506 GRADE C (GOOD)",
+        "position": "441"
+    },
+    {
+        "name": " KARATU ",
+        "gpa": "2.4533 GRADE C (GOOD)",
+        "position": "442"
+    },
+    {
+        "name": " KENT ",
+        "gpa": "2.4545 GRADE C (GOOD)",
+        "position": "443"
+    },
+    {
+        "name": " MTERA ",
+        "gpa": "2.4571 GRADE C (GOOD)",
+        "position": "444"
+    },
+    {
+        "name": " BUGANDO ",
+        "gpa": "2.4578 GRADE C (GOOD)",
+        "position": "445"
+    },
+    {
+        "name": " LUPIRO ",
+        "gpa": "2.4583 GRADE C (GOOD)",
+        "position": "446"
+    },
+    {
+        "name": " ST. JAMES KIGOMA ",
+        "gpa": "2.4583 GRADE C (GOOD)",
+        "position": "447"
+    },
+    {
+        "name": " KASULU ",
+        "gpa": "2.4585 GRADE C (GOOD)",
+        "position": "448"
+    },
+    {
+        "name": " KARAGWE ",
+        "gpa": "2.4593 GRADE C (GOOD)",
+        "position": "449"
+    },
+    {
+        "name": " DUTWA ",
+        "gpa": "2.4627 GRADE C (GOOD)",
+        "position": "450"
+    },
+    {
+        "name": " GILI ",
+        "gpa": "2.4636 GRADE C (GOOD)",
+        "position": "451"
+    },
+    {
+        "name": " MAGOMA ",
+        "gpa": "2.4645 GRADE C (GOOD)",
+        "position": "452"
+    },
+    {
+        "name": " MATANGINI ISLAMIC SEMINARY",
+        "gpa": "2.4667 GRADE C (GOOD)",
+        "position": "453"
+    },
+    {
+        "name": " MABWE TUMAINI ",
+        "gpa": "2.4667 GRADE C (GOOD)",
+        "position": "454"
+    },
+    {
+        "name": " MSUFINI ",
+        "gpa": "2.4676 GRADE C (GOOD)",
+        "position": "455"
+    },
+    {
+        "name": " UMBWE ",
+        "gpa": "2.4686 GRADE C (GOOD)",
+        "position": "456"
+    },
+    {
+        "name": " LIWALE DAY ",
+        "gpa": "2.4691 GRADE C (GOOD)",
+        "position": "457"
+    },
+    {
+        "name": " KAHORORO ",
+        "gpa": "2.4692 GRADE C (GOOD)",
+        "position": "458"
+    },
+    {
+        "name": " NYANG'HWALE ",
+        "gpa": "2.4699 GRADE C (GOOD)",
+        "position": "459"
+    },
+    {
+        "name": " IBWAGA ",
+        "gpa": "2.4725 GRADE C (GOOD)",
+        "position": "460"
+    },
+    {
+        "name": " MWENDAKULIMA ",
+        "gpa": "2.4735 GRADE C (GOOD)",
+        "position": "461"
+    },
+    {
+        "name": " KWEMARAMBA ",
+        "gpa": "2.4738 GRADE C (GOOD)",
+        "position": "462"
+    },
+    {
+        "name": " MWADUI ",
+        "gpa": "2.4740 GRADE C (GOOD)",
+        "position": "463"
+    },
+    {
+        "name": " CHANGARAWE ",
+        "gpa": "2.4744 GRADE C (GOOD)",
+        "position": "464"
+    },
+    {
+        "name": " MWL. TUTUBA ",
+        "gpa": "2.4778 GRADE C (GOOD)",
+        "position": "465"
+    },
+    {
+        "name": " MARIA DE MATTIAS ",
+        "gpa": "2.4780 GRADE C (GOOD)",
+        "position": "466"
+    },
+    {
+        "name": " MADABA ",
+        "gpa": "2.4785 GRADE C (GOOD)",
+        "position": "467"
+    },
+    {
+        "name": " TAWHEED SEMINARY",
+        "gpa": "2.4792 GRADE C (GOOD)",
+        "position": "468"
+    },
+    {
+        "name": " YAKOBI ",
+        "gpa": "2.4792 GRADE C (GOOD)",
+        "position": "469"
+    },
+    {
+        "name": " AGUSTIVO ",
+        "gpa": "2.4792 GRADE C (GOOD)",
+        "position": "470"
+    },
+    {
+        "name": " TUNDUMA TC  CENTRE",
+        "gpa": "2.4792 GRADE C (GOOD)",
+        "position": "471"
+    },
+    {
+        "name": " JOHN THE BAPTIST ",
+        "gpa": "2.4815 GRADE C (GOOD)",
+        "position": "472"
+    },
+    {
+        "name": " SONGEA GIRLS' ",
+        "gpa": "2.4835 GRADE C (GOOD)",
+        "position": "473"
+    },
+    {
+        "name": " GEHANDU ",
+        "gpa": "2.4835 GRADE C (GOOD)",
+        "position": "474"
+    },
+    {
+        "name": " IGAWILO ",
+        "gpa": "2.4855 GRADE C (GOOD)",
+        "position": "475"
+    },
+    {
+        "name": " MWAKALELI ",
+        "gpa": "2.4861 GRADE C (GOOD)",
+        "position": "476"
+    },
+    {
+        "name": " CHISUNGA ",
+        "gpa": "2.4861 GRADE C (GOOD)",
+        "position": "477"
+    },
+    {
+        "name": " JIKOMBOE  ",
+        "gpa": "2.4863 GRADE C (GOOD)",
+        "position": "478"
+    },
+    {
+        "name": " MILAMBO ",
+        "gpa": "2.4876 GRADE C (GOOD)",
+        "position": "479"
+    },
+    {
+        "name": " KATALA HIGH SCHOOL",
+        "gpa": "2.4889 GRADE C (GOOD)",
+        "position": "480"
+    },
+    {
+        "name": " GENESIS HIGH SCHOOL",
+        "gpa": "2.4896 GRADE C (GOOD)",
+        "position": "481"
+    },
+    {
+        "name": " KISHOJU ",
+        "gpa": "2.4910 GRADE C (GOOD)",
+        "position": "482"
+    },
+    {
+        "name": " SANYA JUU ",
+        "gpa": "2.4920 GRADE C (GOOD)",
+        "position": "483"
+    },
+    {
+        "name": " RUNGWA ",
+        "gpa": "2.4932 GRADE C (GOOD)",
+        "position": "484"
+    },
+    {
+        "name": " GREEN CITY ",
+        "gpa": "2.4935 GRADE C (GOOD)",
+        "position": "485"
+    },
+    {
+        "name": " NGUVA ",
+        "gpa": "2.4963 GRADE C (GOOD)",
+        "position": "486"
+    },
+    {
+        "name": " BOREGA ",
+        "gpa": "2.4985 GRADE C (GOOD)",
+        "position": "487"
+    },
+    {
+        "name": " DUNG'UNYI SEMINARY",
+        "gpa": "2.5000 GRADE C (GOOD)",
+        "position": "488"
+    },
+    {
+        "name": " BUKUMBI ",
+        "gpa": "2.5000 GRADE C (GOOD)",
+        "position": "489"
+    },
+    {
+        "name": " TABATA ",
+        "gpa": "2.5000 GRADE C (GOOD)",
+        "position": "490"
+    },
+    {
+        "name": " MILUNDIKWA ",
+        "gpa": "2.5000 GRADE C (GOOD)",
+        "position": "491"
+    },
+    {
+        "name": " BEROYA ",
+        "gpa": "2.5000 GRADE C (GOOD)",
+        "position": "492"
+    },
+    {
+        "name": " NGUDU ",
+        "gpa": "2.5048 GRADE C (GOOD)",
+        "position": "493"
+    },
+    {
+        "name": " USAGARA ",
+        "gpa": "2.5053 GRADE C (GOOD)",
+        "position": "494"
+    },
+    {
+        "name": " PAMOJA ",
+        "gpa": "2.5055 GRADE C (GOOD)",
+        "position": "495"
+    },
+    {
+        "name": " SHANTA MINE ",
+        "gpa": "2.5063 GRADE C (GOOD)",
+        "position": "496"
+    },
+    {
+        "name": " OMUMWANI ",
+        "gpa": "2.5065 GRADE C (GOOD)",
+        "position": "497"
+    },
+    {
+        "name": " MAZAE ",
+        "gpa": "2.5084 GRADE C (GOOD)",
+        "position": "498"
+    },
+    {
+        "name": " WERUWERU ",
+        "gpa": "2.5090 GRADE C (GOOD)",
+        "position": "499"
+    },
+    {
+        "name": " KIPINGO ",
+        "gpa": "2.5097 GRADE C (GOOD)",
+        "position": "500"
+    },
+    {
+        "name": " MANGA ",
+        "gpa": "2.5100 GRADE C (GOOD)",
+        "position": "501"
+    },
+    {
+        "name": " SCOLASTICA ",
+        "gpa": "2.5105 GRADE C (GOOD)",
+        "position": "502"
+    },
+    {
+        "name": " KISIWANI ",
+        "gpa": "2.5128 GRADE C (GOOD)",
+        "position": "503"
+    },
+    {
+        "name": " SAVANNAH PLAINS ",
+        "gpa": "2.5148 GRADE C (GOOD)",
+        "position": "504"
+    },
+    {
+        "name": " RUTABO ",
+        "gpa": "2.5167 GRADE C (GOOD)",
+        "position": "505"
+    },
+    {
+        "name": " KAJUMULO ALEXANDER GIRLS' ",
+        "gpa": "2.5185 GRADE C (GOOD)",
+        "position": "506"
+    },
+    {
+        "name": " GILGAL ",
+        "gpa": "2.5185 GRADE C (GOOD)",
+        "position": "507"
+    },
+    {
+        "name": " ILULA ",
+        "gpa": "2.5187 GRADE C (GOOD)",
+        "position": "508"
+    },
+    {
+        "name": " MWILAMVYA ",
+        "gpa": "2.5203 GRADE C (GOOD)",
+        "position": "509"
+    },
+    {
+        "name": " BIHARAMULO ",
+        "gpa": "2.5204 GRADE C (GOOD)",
+        "position": "510"
+    },
+    {
+        "name": " NTUNDURU ",
+        "gpa": "2.5206 GRADE C (GOOD)",
+        "position": "511"
+    },
+    {
+        "name": " NYERERE ",
+        "gpa": "2.5238 GRADE C (GOOD)",
+        "position": "512"
+    },
+    {
+        "name": " MAKOGA ",
+        "gpa": "2.5248 GRADE C (GOOD)",
+        "position": "513"
+    },
+    {
+        "name": " MBOZI ",
+        "gpa": "2.5250 GRADE C (GOOD)",
+        "position": "514"
+    },
+    {
+        "name": " SANGITI ",
+        "gpa": "2.5250 GRADE C (GOOD)",
+        "position": "515"
+    },
+    {
+        "name": " OCEAN ",
+        "gpa": "2.5254 GRADE C (GOOD)",
+        "position": "516"
+    },
+    {
+        "name": " MAPOSENI ",
+        "gpa": "2.5278 GRADE C (GOOD)",
+        "position": "517"
+    },
+    {
+        "name": " KIGONSERA ",
+        "gpa": "2.5287 GRADE C (GOOD)",
+        "position": "518"
+    },
+    {
+        "name": " ISONGOLE ",
+        "gpa": "2.5289 GRADE C (GOOD)",
+        "position": "519"
+    },
+    {
+        "name": " LUGEYE ",
+        "gpa": "2.5307 GRADE C (GOOD)",
+        "position": "520"
+    },
+    {
+        "name": " LUPILA ",
+        "gpa": "2.5322 GRADE C (GOOD)",
+        "position": "521"
+    },
+    {
+        "name": " ILASI ",
+        "gpa": "2.5323 GRADE C (GOOD)",
+        "position": "522"
+    },
+    {
+        "name": " MANEROMANGO ",
+        "gpa": "2.5324 GRADE C (GOOD)",
+        "position": "523"
+    },
+    {
+        "name": " KITOMONDO ",
+        "gpa": "2.5343 GRADE C (GOOD)",
+        "position": "524"
+    },
+    {
+        "name": " LUBALA ",
+        "gpa": "2.5359 GRADE C (GOOD)",
+        "position": "525"
+    },
+    {
+        "name": " ALPHA ",
+        "gpa": "2.5362 GRADE C (GOOD)",
+        "position": "526"
+    },
+    {
+        "name": " KIDUGALA LUTHERAN SEMINARY",
+        "gpa": "2.5370 GRADE C (GOOD)",
+        "position": "527"
+    },
+    {
+        "name": " MWIMBI ",
+        "gpa": "2.5395 GRADE C (GOOD)",
+        "position": "528"
+    },
+    {
+        "name": " MKWAJUNI ",
+        "gpa": "2.5397 GRADE C (GOOD)",
+        "position": "529"
+    },
+    {
+        "name": " ULAMBYA ",
+        "gpa": "2.5397 GRADE C (GOOD)",
+        "position": "530"
+    },
+    {
+        "name": " MACHAME GIRLS' ",
+        "gpa": "2.5407 GRADE C (GOOD)",
+        "position": "531"
+    },
+    {
+        "name": " BUSERESERE ",
+        "gpa": "2.5424 GRADE C (GOOD)",
+        "position": "532"
+    },
+    {
+        "name": " CHANJALE SEMINARY",
+        "gpa": "2.5432 GRADE C (GOOD)",
+        "position": "533"
+    },
+    {
+        "name": " ST. MARIE EUGENIE ",
+        "gpa": "2.5449 GRADE C (GOOD)",
+        "position": "534"
+    },
+    {
+        "name": " AMANAH ISLAMIC SEMINARY",
+        "gpa": "2.5450 GRADE C (GOOD)",
+        "position": "535"
+    },
+    {
+        "name": " BUNGE GIRLS ",
+        "gpa": "2.5483 GRADE C (GOOD)",
+        "position": "536"
+    },
+    {
+        "name": " ST AUGUSTINE-TAGASTE ",
+        "gpa": "2.5497 GRADE C (GOOD)",
+        "position": "537"
+    },
+    {
+        "name": " MZINGA ",
+        "gpa": "2.5505 GRADE C (GOOD)",
+        "position": "538"
+    },
+    {
+        "name": " DR. OLSEN ",
+        "gpa": "2.5513 GRADE C (GOOD)",
+        "position": "539"
+    },
+    {
+        "name": " CORNERSTONE LEADERSHIP ",
+        "gpa": "2.5515 GRADE C (GOOD)",
+        "position": "540"
+    },
+    {
+        "name": " KISARAWE II ",
+        "gpa": "2.5530 GRADE C (GOOD)",
+        "position": "541"
+    },
+    {
+        "name": " LUGUFU BOYS' ",
+        "gpa": "2.5534 GRADE C (GOOD)",
+        "position": "542"
+    },
+    {
+        "name": " KAKONKO ",
+        "gpa": "2.5541 GRADE C (GOOD)",
+        "position": "543"
+    },
+    {
+        "name": " REGINAMUNDI GIRLS' ",
+        "gpa": "2.5556 GRADE C (GOOD)",
+        "position": "544"
+    },
+    {
+        "name": " MPEMBA ",
+        "gpa": "2.5562 GRADE C (GOOD)",
+        "position": "545"
+    },
+    {
+        "name": " MARA ",
+        "gpa": "2.5565 GRADE C (GOOD)",
+        "position": "546"
+    },
+    {
+        "name": " MWANDOYA ",
+        "gpa": "2.5565 GRADE C (GOOD)",
+        "position": "547"
+    },
+    {
+        "name": " BEIT-EL-RAS ",
+        "gpa": "2.5600 GRADE C (GOOD)",
+        "position": "548"
+    },
+    {
+        "name": " MBAMBA BAY ",
+        "gpa": "2.5648 GRADE C (GOOD)",
+        "position": "549"
+    },
+    {
+        "name": " NASULI ",
+        "gpa": "2.5661 GRADE C (GOOD)",
+        "position": "550"
+    },
+    {
+        "name": " MARAMBA ",
+        "gpa": "2.5696 GRADE C (GOOD)",
+        "position": "551"
+    },
+    {
+        "name": " DAKAWA HIGH SCHOOL",
+        "gpa": "2.5720 GRADE C (GOOD)",
+        "position": "552"
+    },
+    {
+        "name": " META ",
+        "gpa": "2.5725 GRADE C (GOOD)",
+        "position": "553"
+    },
+    {
+        "name": " IDRISSA ABDULWAKIL ",
+        "gpa": "2.5750 GRADE C (GOOD)",
+        "position": "554"
+    },
+    {
+        "name": " NGANZA ",
+        "gpa": "2.5756 GRADE C (GOOD)",
+        "position": "555"
+    },
+    {
+        "name": " MERRIWA ",
+        "gpa": "2.5766 GRADE C (GOOD)",
+        "position": "556"
+    },
+    {
+        "name": " GEITA ADVENTIST ",
+        "gpa": "2.5776 GRADE C (GOOD)",
+        "position": "557"
+    },
+    {
+        "name": " WATU ",
+        "gpa": "2.5794 GRADE C (GOOD)",
+        "position": "558"
+    },
+    {
+        "name": " MOUNT KIPENGERE ",
+        "gpa": "2.5818 GRADE C (GOOD)",
+        "position": "559"
+    },
+    {
+        "name": " KATOKE SEMINARY",
+        "gpa": "2.5833 GRADE C (GOOD)",
+        "position": "560"
+    },
+    {
+        "name": " KIWELE ",
+        "gpa": "2.5851 GRADE C (GOOD)",
+        "position": "561"
+    },
+    {
+        "name": " IFUNDA GIRLS' ",
+        "gpa": "2.5867 GRADE C (GOOD)",
+        "position": "562"
+    },
+    {
+        "name": " MWINYI ",
+        "gpa": "2.5875 GRADE C (GOOD)",
+        "position": "563"
+    },
+    {
+        "name": " KASOMA ",
+        "gpa": "2.5897 GRADE C (GOOD)",
+        "position": "564"
+    },
+    {
+        "name": " MWANDIGA ",
+        "gpa": "2.5907 GRADE C (GOOD)",
+        "position": "565"
+    },
+    {
+        "name": " LAKE ",
+        "gpa": "2.5909 GRADE C (GOOD)",
+        "position": "566"
+    },
+    {
+        "name": " KAINAM ",
+        "gpa": "2.5909 GRADE C (GOOD)",
+        "position": "567"
+    },
+    {
+        "name": " PALLOTI GIRLS' ",
+        "gpa": "2.5917 GRADE C (GOOD)",
+        "position": "568"
+    },
+    {
+        "name": " UBIRI ",
+        "gpa": "2.5918 GRADE C (GOOD)",
+        "position": "569"
+    },
+    {
+        "name": " WALIUL ISLAMIC BOYS' ",
+        "gpa": "2.5926 GRADE C (GOOD)",
+        "position": "570"
+    },
+    {
+        "name": " JUHUDI ",
+        "gpa": "2.5944 GRADE C (GOOD)",
+        "position": "571"
+    },
+    {
+        "name": " MIDLANDS ",
+        "gpa": "2.5952 GRADE C (GOOD)",
+        "position": "572"
+    },
+    {
+        "name": " MTWARA ISLAMIC ",
+        "gpa": "2.5952 GRADE C (GOOD)",
+        "position": "573"
+    },
+    {
+        "name": " MWENGE ",
+        "gpa": "2.5972 GRADE C (GOOD)",
+        "position": "574"
+    },
+    {
+        "name": " HAMZA AZIZI ALLY MEMORIAL ",
+        "gpa": "2.5977 GRADE C (GOOD)",
+        "position": "575"
+    },
+    {
+        "name": " TAGAMENDA ",
+        "gpa": "2.5988 GRADE C (GOOD)",
+        "position": "576"
+    },
+    {
+        "name": " KIGOMA GRAND ",
+        "gpa": "2.5991 GRADE C (GOOD)",
+        "position": "577"
+    },
+    {
+        "name": " MUBABA ",
+        "gpa": "2.5994 GRADE C (GOOD)",
+        "position": "578"
+    },
+    {
+        "name": " MTWARA TECHNICAL ",
+        "gpa": "2.5998 GRADE C (GOOD)",
+        "position": "579"
+    },
+    {
+        "name": " DR. SALIM AHMED SALIM ",
+        "gpa": "2.6019 GRADE C (GOOD)",
+        "position": "580"
+    },
+    {
+        "name": " LONDONI ",
+        "gpa": "2.6044 GRADE C (GOOD)",
+        "position": "581"
+    },
+    {
+        "name": " SANGU ",
+        "gpa": "2.6048 GRADE C (GOOD)",
+        "position": "582"
+    },
+    {
+        "name": " NANUNGU ",
+        "gpa": "2.6105 GRADE C (GOOD)",
+        "position": "583"
+    },
+    {
+        "name": " KIKODI ",
+        "gpa": "2.6111 GRADE C (GOOD)",
+        "position": "584"
+    },
+    {
+        "name": " ST. MARY'S DULUTI ",
+        "gpa": "2.6146 GRADE C (GOOD)",
+        "position": "585"
+    },
+    {
+        "name": " FOUNTAIN GATE DODOMA ",
+        "gpa": "2.6154 GRADE C (GOOD)",
+        "position": "586"
+    },
+    {
+        "name": " JABAL-HIRA MUSLIM JUNIOR SEMINARY",
+        "gpa": "2.6162 GRADE C (GOOD)",
+        "position": "587"
+    },
+    {
+        "name": " KIUMA ",
+        "gpa": "2.6167 GRADE C (GOOD)",
+        "position": "588"
+    },
+    {
+        "name": " MOREMBE DAY ",
+        "gpa": "2.6181 GRADE C (GOOD)",
+        "position": "589"
+    },
+    {
+        "name": " BULONGWA ",
+        "gpa": "2.6190 GRADE C (GOOD)",
+        "position": "590"
+    },
+    {
+        "name": " UCHILE ",
+        "gpa": "2.6194 GRADE C (GOOD)",
+        "position": "591"
+    },
+    {
+        "name": " SHAMBALAI ",
+        "gpa": "2.6196 GRADE C (GOOD)",
+        "position": "592"
+    },
+    {
+        "name": " JOSIAH GIRLS' HIGH SCHOOL",
+        "gpa": "2.6212 GRADE C (GOOD)",
+        "position": "593"
+    },
+    {
+        "name": " GAIRO ",
+        "gpa": "2.6218 GRADE C (GOOD)",
+        "position": "594"
+    },
+    {
+        "name": " RORYA ",
+        "gpa": "2.6250 GRADE C (GOOD)",
+        "position": "595"
+    },
+    {
+        "name": " CELINA KOMBANI ",
+        "gpa": "2.6292 GRADE C (GOOD)",
+        "position": "596"
+    },
+    {
+        "name": " ALGEBRA ISLAMIC SEMINARY",
+        "gpa": "2.6296 GRADE C (GOOD)",
+        "position": "597"
+    },
+    {
+        "name": " TANGA TECHNICAL ",
+        "gpa": "2.6311 GRADE C (GOOD)",
+        "position": "598"
+    },
+    {
+        "name": " MWANGA ",
+        "gpa": "2.6312 GRADE C (GOOD)",
+        "position": "599"
+    },
+    {
+        "name": " NGARA BOYS  ",
+        "gpa": "2.6314 GRADE C (GOOD)",
+        "position": "600"
+    },
+    {
+        "name": " WILIMA ",
+        "gpa": "2.6333 GRADE C (GOOD)",
+        "position": "601"
+    },
+    {
+        "name": " ST.ANTHONY'S ",
+        "gpa": "2.6337 GRADE C (GOOD)",
+        "position": "602"
+    },
+    {
+        "name": " IWALANJE ",
+        "gpa": "2.6349 GRADE C (GOOD)",
+        "position": "603"
+    },
+    {
+        "name": " MUNANILA ",
+        "gpa": "2.6365 GRADE C (GOOD)",
+        "position": "604"
+    },
+    {
+        "name": " USEVYA ",
+        "gpa": "2.6365 GRADE C (GOOD)",
+        "position": "605"
+    },
+    {
+        "name": " KIMANI ",
+        "gpa": "2.6396 GRADE C (GOOD)",
+        "position": "606"
+    },
+    {
+        "name": " CHASASA ",
+        "gpa": "2.6396 GRADE C (GOOD)",
+        "position": "607"
+    },
+    {
+        "name": " BWAWANI ",
+        "gpa": "2.6402 GRADE C (GOOD)",
+        "position": "608"
+    },
+    {
+        "name": " ASKOFU ADRIAN MKOBA ",
+        "gpa": "2.6404 GRADE C (GOOD)",
+        "position": "609"
+    },
+    {
+        "name": " ABOUD JUMBE MWINYI ",
+        "gpa": "2.6429 GRADE C (GOOD)",
+        "position": "610"
+    },
+    {
+        "name": " BINZA ",
+        "gpa": "2.6455 GRADE C (GOOD)",
+        "position": "611"
+    },
+    {
+        "name": " LUPALILO ",
+        "gpa": "2.6555 GRADE C (GOOD)",
+        "position": "612"
+    },
+    {
+        "name": " NORTHERN HIGHLANDS ",
+        "gpa": "2.6563 GRADE C (GOOD)",
+        "position": "613"
+    },
+    {
+        "name": " MAKAMBAKO ",
+        "gpa": "2.6565 GRADE C (GOOD)",
+        "position": "614"
+    },
+    {
+        "name": " ANNE MARIE ",
+        "gpa": "2.6581 GRADE C (GOOD)",
+        "position": "615"
+    },
+    {
+        "name": " MBWENITETA ",
+        "gpa": "2.6595 GRADE C (GOOD)",
+        "position": "616"
+    },
+    {
+        "name": " WENDA HIGH SCHOOL",
+        "gpa": "2.6610 GRADE C (GOOD)",
+        "position": "617"
+    },
+    {
+        "name": " ILEMBO ",
+        "gpa": "2.6615 GRADE C (GOOD)",
+        "position": "618"
+    },
+    {
+        "name": " LUSANGI MORAVIAN JUNIOR SEMINARY",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "619"
+    },
+    {
+        "name": " WANIKE ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "620"
+    },
+    {
+        "name": " UWELENI ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "621"
+    },
+    {
+        "name": " UROKI ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "622"
+    },
+    {
+        "name": " JIHAD ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "623"
+    },
+    {
+        "name": " HAGAFILO ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "624"
+    },
+    {
+        "name": " KARANSI ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "625"
+    },
+    {
+        "name": " MGUTWA ",
+        "gpa": "2.6667 GRADE C (GOOD)",
+        "position": "626"
+    },
+    {
+        "name": " CHAMWINO ",
+        "gpa": "2.6684 GRADE C (GOOD)",
+        "position": "627"
+    },
+    {
+        "name": " MALAMBO ",
+        "gpa": "2.6690 GRADE C (GOOD)",
+        "position": "628"
+    },
+    {
+        "name": " BURONGE ",
+        "gpa": "2.6691 GRADE C (GOOD)",
+        "position": "629"
+    },
+    {
+        "name": " AL-IHSAN GIRLS' ",
+        "gpa": "2.6733 GRADE C (GOOD)",
+        "position": "630"
+    },
+    {
+        "name": " SONGWE SUNRISE ",
+        "gpa": "2.6733 GRADE C (GOOD)",
+        "position": "631"
+    },
+    {
+        "name": " PUGU ",
+        "gpa": "2.6761 GRADE C (GOOD)",
+        "position": "632"
+    },
+    {
+        "name": " KAIGARA ",
+        "gpa": "2.6763 GRADE C (GOOD)",
+        "position": "633"
+    },
+    {
+        "name": " HOMBOLO ",
+        "gpa": "2.6786 GRADE C (GOOD)",
+        "position": "634"
+    },
+    {
+        "name": " LILIAN KIBO ",
+        "gpa": "2.6806 GRADE C (GOOD)",
+        "position": "635"
+    },
+    {
+        "name": " BURHANI ",
+        "gpa": "2.6806 GRADE C (GOOD)",
+        "position": "636"
+    },
+    {
+        "name": " ABEID AMANI KARUME ",
+        "gpa": "2.6828 GRADE C (GOOD)",
+        "position": "637"
+    },
+    {
+        "name": " MUDIO ISLAMIC SEMINARY",
+        "gpa": "2.6852 GRADE C (GOOD)",
+        "position": "638"
+    },
+    {
+        "name": " MAWENZI ",
+        "gpa": "2.6867 GRADE C (GOOD)",
+        "position": "639"
+    },
+    {
+        "name": " TINDE GIRLS' HIGH SCHOOL",
+        "gpa": "2.6872 GRADE C (GOOD)",
+        "position": "640"
+    },
+    {
+        "name": " JOSEPHINE GIRLS' ",
+        "gpa": "2.6894 GRADE C (GOOD)",
+        "position": "641"
+    },
+    {
+        "name": " KAZIMA ",
+        "gpa": "2.6895 GRADE C (GOOD)",
+        "position": "642"
+    },
+    {
+        "name": " UMBA ",
+        "gpa": "2.6898 GRADE C (GOOD)",
+        "position": "643"
+    },
+    {
+        "name": " SSP HIGH ",
+        "gpa": "2.6905 GRADE C (GOOD)",
+        "position": "644"
+    },
+    {
+        "name": " BUTUNDWE ",
+        "gpa": "2.6917 GRADE C (GOOD)",
+        "position": "645"
+    },
+    {
+        "name": " NANDEMBO ",
+        "gpa": "2.6938 GRADE C (GOOD)",
+        "position": "646"
+    },
+    {
+        "name": " IMBORU ",
+        "gpa": "2.6944 GRADE C (GOOD)",
+        "position": "647"
+    },
+    {
+        "name": " HOLLYWOOD ",
+        "gpa": "2.6944 GRADE C (GOOD)",
+        "position": "648"
+    },
+    {
+        "name": " BAGAMOYO ",
+        "gpa": "2.6951 GRADE C (GOOD)",
+        "position": "649"
+    },
+    {
+        "name": " LUGALO ",
+        "gpa": "2.6988 GRADE C (GOOD)",
+        "position": "650"
+    },
+    {
+        "name": " RUGAMBWA ",
+        "gpa": "2.7003 GRADE C (GOOD)",
+        "position": "651"
+    },
+    {
+        "name": " UYUMBU ",
+        "gpa": "2.7017 GRADE C (GOOD)",
+        "position": "652"
+    },
+    {
+        "name": " ANNA MKAPA ",
+        "gpa": "2.7024 GRADE C (GOOD)",
+        "position": "653"
+    },
+    {
+        "name": " KISUTU ",
+        "gpa": "2.7025 GRADE C (GOOD)",
+        "position": "654"
+    },
+    {
+        "name": " ZANZIBAR COMMERCIAL ",
+        "gpa": "2.7025 GRADE C (GOOD)",
+        "position": "655"
+    },
+    {
+        "name": " BUKONGO ",
+        "gpa": "2.7060 GRADE C (GOOD)",
+        "position": "656"
+    },
+    {
+        "name": " URAMBO DAY ",
+        "gpa": "2.7068 GRADE C (GOOD)",
+        "position": "657"
+    },
+    {
+        "name": " NEWMAN ",
+        "gpa": "2.7083 GRADE C (GOOD)",
+        "position": "658"
+    },
+    {
+        "name": " MIONO  ",
+        "gpa": "2.7089 GRADE C (GOOD)",
+        "position": "659"
+    },
+    {
+        "name": " PAWAGA ",
+        "gpa": "2.7105 GRADE C (GOOD)",
+        "position": "660"
+    },
+    {
+        "name": " ULAYASI ",
+        "gpa": "2.7137 GRADE C (GOOD)",
+        "position": "661"
+    },
+    {
+        "name": " MULBADAW ",
+        "gpa": "2.7143 GRADE C (GOOD)",
+        "position": "662"
+    },
+    {
+        "name": " BUSEGWE GIRLS' ",
+        "gpa": "2.7143 GRADE C (GOOD)",
+        "position": "663"
+    },
+    {
+        "name": " FARAJA ",
+        "gpa": "2.7145 GRADE C (GOOD)",
+        "position": "664"
+    },
+    {
+        "name": " KIRAENI GIRLS' ",
+        "gpa": "2.7157 GRADE C (GOOD)",
+        "position": "665"
+    },
+    {
+        "name": " AGGREY CHANJI ",
+        "gpa": "2.7167 GRADE C (GOOD)",
+        "position": "666"
+    },
+    {
+        "name": " OLD SHINYANGA ",
+        "gpa": "2.7173 GRADE C (GOOD)",
+        "position": "667"
+    },
+    {
+        "name": " MSALALA ",
+        "gpa": "2.7201 GRADE C (GOOD)",
+        "position": "668"
+    },
+    {
+        "name": " MATOMBO ",
+        "gpa": "2.7203 GRADE C (GOOD)",
+        "position": "669"
+    },
+    {
+        "name": " PREMIER GIRLS' ",
+        "gpa": "2.7207 GRADE C (GOOD)",
+        "position": "670"
+    },
+    {
+        "name": " IRINGA GIRLS' ",
+        "gpa": "2.7222 GRADE C (GOOD)",
+        "position": "671"
+    },
+    {
+        "name": " ST. THERESA OF THE CHILD JESUS ",
+        "gpa": "2.7222 GRADE C (GOOD)",
+        "position": "672"
+    },
+    {
+        "name": " MAKETE GIRLS''  ",
+        "gpa": "2.7222 GRADE C (GOOD)",
+        "position": "673"
+    },
+    {
+        "name": " ALI KHAMIS CAMP ",
+        "gpa": "2.7222 GRADE C (GOOD)",
+        "position": "674"
+    },
+    {
+        "name": " GIRANGO ",
+        "gpa": "2.7235 GRADE C (GOOD)",
+        "position": "675"
+    },
+    {
+        "name": " ISMANI ",
+        "gpa": "2.7251 GRADE C (GOOD)",
+        "position": "676"
+    },
+    {
+        "name": " NEW ERA ",
+        "gpa": "2.7264 GRADE C (GOOD)",
+        "position": "677"
+    },
+    {
+        "name": " MAGOTO ",
+        "gpa": "2.7273 GRADE C (GOOD)",
+        "position": "678"
+    },
+    {
+        "name": " ALDERSGATE ",
+        "gpa": "2.7285 GRADE C (GOOD)",
+        "position": "679"
+    },
+    {
+        "name": " LOLEZA ",
+        "gpa": "2.7286 GRADE C (GOOD)",
+        "position": "680"
+    },
+    {
+        "name": " CHISENGA ",
+        "gpa": "2.7292 GRADE C (GOOD)",
+        "position": "681"
+    },
+    {
+        "name": " DODOMA ",
+        "gpa": "2.7302 GRADE C (GOOD)",
+        "position": "682"
+    },
+    {
+        "name": " VUNJO ",
+        "gpa": "2.7317 GRADE C (GOOD)",
+        "position": "683"
+    },
+    {
+        "name": " ARUSHA SCIENCE ",
+        "gpa": "2.7330 GRADE C (GOOD)",
+        "position": "684"
+    },
+    {
+        "name": " SUJI ",
+        "gpa": "2.7333 GRADE C (GOOD)",
+        "position": "685"
+    },
+    {
+        "name": " IKIZU ",
+        "gpa": "2.7339 GRADE C (GOOD)",
+        "position": "686"
+    },
+    {
+        "name": " AFRICAN RAINBOW ",
+        "gpa": "2.7381 GRADE C (GOOD)",
+        "position": "687"
+    },
+    {
+        "name": " INYONGA ",
+        "gpa": "2.7393 GRADE C (GOOD)",
+        "position": "688"
+    },
+    {
+        "name": " MSASANI ISLAMIC ",
+        "gpa": "2.7407 GRADE C (GOOD)",
+        "position": "689"
+    },
+    {
+        "name": " SAME ",
+        "gpa": "2.7454 GRADE C (GOOD)",
+        "position": "690"
+    },
+    {
+        "name": " KABUNGU ",
+        "gpa": "2.7459 GRADE C (GOOD)",
+        "position": "691"
+    },
+    {
+        "name": " IKUNGI ",
+        "gpa": "2.7477 GRADE C (GOOD)",
+        "position": "692"
+    },
+    {
+        "name": " KIPOKE ",
+        "gpa": "2.7500 GRADE C (GOOD)",
+        "position": "693"
+    },
+    {
+        "name": " MCHANGAMDOGO ",
+        "gpa": "2.7500 GRADE C (GOOD)",
+        "position": "694"
+    },
+    {
+        "name": " MCHUNGAJI MWEMA ",
+        "gpa": "2.7500 GRADE C (GOOD)",
+        "position": "695"
+    },
+    {
+        "name": " SAMORA MACHEL ",
+        "gpa": "2.7526 GRADE C (GOOD)",
+        "position": "696"
+    },
+    {
+        "name": " SARWATT ",
+        "gpa": "2.7527 GRADE C (GOOD)",
+        "position": "697"
+    },
+    {
+        "name": " MAFINGA SEMINARY",
+        "gpa": "2.7544 GRADE C (GOOD)",
+        "position": "698"
+    },
+    {
+        "name": " UBUNGO ISLAMIC HIGH SCHOOL",
+        "gpa": "2.7544 GRADE C (GOOD)",
+        "position": "699"
+    },
+    {
+        "name": " SHAMIANI ",
+        "gpa": "2.7590 GRADE C (GOOD)",
+        "position": "700"
+    },
+    {
+        "name": " MATAMBA ",
+        "gpa": "2.7599 GRADE C (GOOD)",
+        "position": "701"
+    },
+    {
+        "name": " ISIMILA ",
+        "gpa": "2.7618 GRADE C (GOOD)",
+        "position": "702"
+    },
+    {
+        "name": " BENDEL MEMORIAL ",
+        "gpa": "2.7626 GRADE C (GOOD)",
+        "position": "703"
+    },
+    {
+        "name": " KONGWA ",
+        "gpa": "2.7633 GRADE C (GOOD)",
+        "position": "704"
+    },
+    {
+        "name": " MAKIBA ",
+        "gpa": "2.7644 GRADE C (GOOD)",
+        "position": "705"
+    },
+    {
+        "name": " ST.PAUL'S LIULI ",
+        "gpa": "2.7651 GRADE C (GOOD)",
+        "position": "706"
+    },
+    {
+        "name": " IFUNDA TECHNICAL ",
+        "gpa": "2.7662 GRADE C (GOOD)",
+        "position": "707"
+    },
+    {
+        "name": " MVUMI ",
+        "gpa": "2.7667 GRADE C (GOOD)",
+        "position": "708"
+    },
+    {
+        "name": " UCHIRA GIRLS ISLAMIC ",
+        "gpa": "2.7667 GRADE C (GOOD)",
+        "position": "709"
+    },
+    {
+        "name": " AMANI ABEID KARUME ",
+        "gpa": "2.7686 GRADE C (GOOD)",
+        "position": "710"
+    },
+    {
+        "name": " NYANKUMBU ",
+        "gpa": "2.7691 GRADE C (GOOD)",
+        "position": "711"
+    },
+    {
+        "name": " IDIGIMA ",
+        "gpa": "2.7691 GRADE C (GOOD)",
+        "position": "712"
+    },
+    {
+        "name": " BIGWA SISTERS' SEMINARY",
+        "gpa": "2.7704 GRADE C (GOOD)",
+        "position": "713"
+    },
+    {
+        "name": " WIZA ",
+        "gpa": "2.7745 GRADE C (GOOD)",
+        "position": "714"
+    },
+    {
+        "name": " MWEMBENI ",
+        "gpa": "2.7756 GRADE C (GOOD)",
+        "position": "715"
+    },
+    {
+        "name": " MEATU ",
+        "gpa": "2.7769 GRADE C (GOOD)",
+        "position": "716"
+    },
+    {
+        "name": " ARAFAH ISLAMIC SEMINARY",
+        "gpa": "2.7770 GRADE C (GOOD)",
+        "position": "717"
+    },
+    {
+        "name": " MANOW LUTHERAN JUNIOR SEMINARY",
+        "gpa": "2.7778 GRADE C (GOOD)",
+        "position": "718"
+    },
+    {
+        "name": " IYUNGA TECHNICAL ",
+        "gpa": "2.7829 GRADE C (GOOD)",
+        "position": "719"
+    },
+    {
+        "name": " MKUGWA ",
+        "gpa": "2.7876 GRADE C (GOOD)",
+        "position": "720"
+    },
+    {
+        "name": " NAKAGURU ",
+        "gpa": "2.7883 GRADE C (GOOD)",
+        "position": "721"
+    },
+    {
+        "name": " MURUSAGAMBA ",
+        "gpa": "2.7910 GRADE C (GOOD)",
+        "position": "722"
+    },
+    {
+        "name": " NASIBUGANI ",
+        "gpa": "2.7917 GRADE C (GOOD)",
+        "position": "723"
+    },
+    {
+        "name": " MACECHU ",
+        "gpa": "2.7926 GRADE C (GOOD)",
+        "position": "724"
+    },
+    {
+        "name": " KAWAWA ",
+        "gpa": "2.7939 GRADE C (GOOD)",
+        "position": "725"
+    },
+    {
+        "name": " PEMBA ISLAMIC COLLEGE",
+        "gpa": "2.7976 GRADE C (GOOD)",
+        "position": "726"
+    },
+    {
+        "name": " PEACE HOUSE ",
+        "gpa": "2.7984 GRADE C (GOOD)",
+        "position": "727"
+    },
+    {
+        "name": " HAYATUL ISLAMIYA ",
+        "gpa": "2.7993 GRADE C (GOOD)",
+        "position": "728"
+    },
+    {
+        "name": " GOD'S BRIDGE ",
+        "gpa": "2.8013 GRADE C (GOOD)",
+        "position": "729"
+    },
+    {
+        "name": " KANGA ",
+        "gpa": "2.8046 GRADE C (GOOD)",
+        "position": "730"
+    },
+    {
+        "name": " UTETE ",
+        "gpa": "2.8048 GRADE C (GOOD)",
+        "position": "731"
+    },
+    {
+        "name": " KAENGESA SEMINARY",
+        "gpa": "2.8056 GRADE C (GOOD)",
+        "position": "732"
+    },
+    {
+        "name": " RANGWI ",
+        "gpa": "2.8081 GRADE C (GOOD)",
+        "position": "733"
+    },
+    {
+        "name": " BUSWELU ",
+        "gpa": "2.8092 GRADE C (GOOD)",
+        "position": "734"
+    },
+    {
+        "name": " KEIFO ",
+        "gpa": "2.8111 GRADE C (GOOD)",
+        "position": "735"
+    },
+    {
+        "name": " KIGURUNYEMBE ",
+        "gpa": "2.8122 GRADE C (GOOD)",
+        "position": "736"
+    },
+    {
+        "name": " WALI-UL-ASR GIRLS' SEMINARY",
+        "gpa": "2.8182 GRADE C (GOOD)",
+        "position": "737"
+    },
+    {
+        "name": " MOSHI ",
+        "gpa": "2.8205 GRADE C (GOOD)",
+        "position": "738"
+    },
+    {
+        "name": " ZOGOWALE ",
+        "gpa": "2.8214 GRADE C (GOOD)",
+        "position": "739"
+    },
+    {
+        "name": " MASHUJAA-SINZA ",
+        "gpa": "2.8224 GRADE C (GOOD)",
+        "position": "740"
+    },
+    {
+        "name": " KAMENA ",
+        "gpa": "2.8236 GRADE C (GOOD)",
+        "position": "741"
+    },
+    {
+        "name": " KIMAMBA ",
+        "gpa": "2.8243 GRADE C (GOOD)",
+        "position": "742"
+    },
+    {
+        "name": " BIHAWANA ",
+        "gpa": "2.8265 GRADE C (GOOD)",
+        "position": "743"
+    },
+    {
+        "name": " MSAMALA ",
+        "gpa": "2.8301 GRADE C (GOOD)",
+        "position": "744"
+    },
+    {
+        "name": " JANG'OMBE ",
+        "gpa": "2.8333 GRADE C (GOOD)",
+        "position": "745"
+    },
+    {
+        "name": " ALI HASSAN MWINYI ISLAMIC ",
+        "gpa": "2.8372 GRADE C (GOOD)",
+        "position": "746"
+    },
+    {
+        "name": " TEMEKE ",
+        "gpa": "2.8372 GRADE C (GOOD)",
+        "position": "747"
+    },
+    {
+        "name": " UDZUNGWA ",
+        "gpa": "2.8373 GRADE C (GOOD)",
+        "position": "748"
+    },
+    {
+        "name": " MWAKAVUTA ",
+        "gpa": "2.8405 GRADE C (GOOD)",
+        "position": "749"
+    },
+    {
+        "name": " HIGHLANDS ",
+        "gpa": "2.8413 GRADE C (GOOD)",
+        "position": "750"
+    },
+    {
+        "name": " ST. JAMES SEMINARY",
+        "gpa": "2.8417 GRADE C (GOOD)",
+        "position": "751"
+    },
+    {
+        "name": " KIKARO ",
+        "gpa": "2.8477 GRADE C (GOOD)",
+        "position": "752"
+    },
+    {
+        "name": " MAKITA ",
+        "gpa": "2.8497 GRADE C (GOOD)",
+        "position": "753"
+    },
+    {
+        "name": " MALECELA ",
+        "gpa": "2.8500 GRADE C (GOOD)",
+        "position": "754"
+    },
+    {
+        "name": " MBEZI BEACH ",
+        "gpa": "2.8505 GRADE C (GOOD)",
+        "position": "755"
+    },
+    {
+        "name": " IKWIRIRI ",
+        "gpa": "2.8605 GRADE C (GOOD)",
+        "position": "756"
+    },
+    {
+        "name": " KIPONDA ",
+        "gpa": "2.8638 GRADE C (GOOD)",
+        "position": "757"
+    },
+    {
+        "name": " TARAKEA ",
+        "gpa": "2.8641 GRADE C (GOOD)",
+        "position": "758"
+    },
+    {
+        "name": " MENGELE ",
+        "gpa": "2.8654 GRADE C (GOOD)",
+        "position": "759"
+    },
+    {
+        "name": " MKOLANI ",
+        "gpa": "2.8745 GRADE C (GOOD)",
+        "position": "760"
+    },
+    {
+        "name": " NYEGEZI SEMINARY",
+        "gpa": "2.8750 GRADE C (GOOD)",
+        "position": "761"
+    },
+    {
+        "name": " LEGURUKI ",
+        "gpa": "2.8750 GRADE C (GOOD)",
+        "position": "762"
+    },
+    {
+        "name": " KORONA ",
+        "gpa": "2.8756 GRADE C (GOOD)",
+        "position": "763"
+    },
+    {
+        "name": " JOHN PAUL II KAHAMA ",
+        "gpa": "2.8778 GRADE C (GOOD)",
+        "position": "764"
+    },
+    {
+        "name": " MAWELEWELE ",
+        "gpa": "2.8787 GRADE C (GOOD)",
+        "position": "765"
+    },
+    {
+        "name": " ABBEY ",
+        "gpa": "2.8788 GRADE C (GOOD)",
+        "position": "766"
+    },
+    {
+        "name": " POMERINI ",
+        "gpa": "2.8796 GRADE C (GOOD)",
+        "position": "767"
+    },
+    {
+        "name": " MOHORO ",
+        "gpa": "2.8817 GRADE C (GOOD)",
+        "position": "768"
+    },
+    {
+        "name": " RONECA GIRLS' ",
+        "gpa": "2.8824 GRADE C (GOOD)",
+        "position": "769"
+    },
+    {
+        "name": " DYNAMIC HIGH SCHOOL",
+        "gpa": "2.8889 GRADE C (GOOD)",
+        "position": "770"
+    },
+    {
+        "name": " CALL AND VISION ",
+        "gpa": "2.8889 GRADE C (GOOD)",
+        "position": "771"
+    },
+    {
+        "name": " NURU ",
+        "gpa": "2.8919 GRADE C (GOOD)",
+        "position": "772"
+    },
+    {
+        "name": " AIRWING ",
+        "gpa": "2.8927 GRADE C (GOOD)",
+        "position": "773"
+    },
+    {
+        "name": " BEREGE ",
+        "gpa": "2.8951 GRADE C (GOOD)",
+        "position": "774"
+    },
+    {
+        "name": " ZANAKI ",
+        "gpa": "2.8966 GRADE C (GOOD)",
+        "position": "775"
+    },
+    {
+        "name": " BALANGDALALU ",
+        "gpa": "2.8974 GRADE C (GOOD)",
+        "position": "776"
+    },
+    {
+        "name": " SONGEA MUSLIM SEMINARY",
+        "gpa": "2.9010 GRADE C (GOOD)",
+        "position": "777"
+    },
+    {
+        "name": " LOYOLA ",
+        "gpa": "2.9063 GRADE C (GOOD)",
+        "position": "778"
+    },
+    {
+        "name": " NYALANJA ",
+        "gpa": "2.9069 GRADE C (GOOD)",
+        "position": "779"
+    },
+    {
+        "name": " MKUZO ISLAMIC ",
+        "gpa": "2.9111 GRADE C (GOOD)",
+        "position": "780"
+    },
+    {
+        "name": " SANU SEMINARY",
+        "gpa": "2.9140 GRADE C (GOOD)",
+        "position": "781"
+    },
+    {
+        "name": " SONI SEMINARY",
+        "gpa": "2.9167 GRADE C (GOOD)",
+        "position": "782"
+    },
+    {
+        "name": " AL-HARAMAIN ISLAMIC SEMINARY",
+        "gpa": "2.9167 GRADE C (GOOD)",
+        "position": "783"
+    },
+    {
+        "name": " ISALU EXCEL HIGH SCHOOL",
+        "gpa": "2.9167 GRADE C (GOOD)",
+        "position": "784"
+    },
+    {
+        "name": " NSIMBO ",
+        "gpa": "2.9194 GRADE C (GOOD)",
+        "position": "785"
+    },
+    {
+        "name": " AGGREY ",
+        "gpa": "2.9242 GRADE C (GOOD)",
+        "position": "786"
+    },
+    {
+        "name": " MAWENI ",
+        "gpa": "2.9242 GRADE C (GOOD)",
+        "position": "787"
+    },
+    {
+        "name": " EFATHA SEMINARY",
+        "gpa": "2.9281 GRADE C (GOOD)",
+        "position": "788"
+    },
+    {
+        "name": " DKT. ALI MOHAMED SHEIN ",
+        "gpa": "2.9351 GRADE C (GOOD)",
+        "position": "789"
+    },
+    {
+        "name": " JANETH MAGUFULI GIRLS ",
+        "gpa": "2.9351 GRADE C (GOOD)",
+        "position": "790"
+    },
+    {
+        "name": " TWEYAMBE ",
+        "gpa": "2.9359 GRADE C (GOOD)",
+        "position": "791"
+    },
+    {
+        "name": " MAASAE GIRLS' LUTHERAN ",
+        "gpa": "2.9363 GRADE C (GOOD)",
+        "position": "792"
+    },
+    {
+        "name": " KIRINJIKO ISLAMIC SEMINARY",
+        "gpa": "2.9369 GRADE C (GOOD)",
+        "position": "793"
+    },
+    {
+        "name": " KIBASILA ",
+        "gpa": "2.9443 GRADE C (GOOD)",
+        "position": "794"
+    },
+    {
+        "name": " ALLIANCE GIRLS ",
+        "gpa": "2.9444 GRADE C (GOOD)",
+        "position": "795"
+    },
+    {
+        "name": " MADUNGU ",
+        "gpa": "2.9492 GRADE C (GOOD)",
+        "position": "796"
+    },
+    {
+        "name": " SIMANJIRO ",
+        "gpa": "2.9517 GRADE C (GOOD)",
+        "position": "797"
+    },
+    {
+        "name": " MOH'D JUMA PINDUA ",
+        "gpa": "2.9562 GRADE C (GOOD)",
+        "position": "798"
+    },
+    {
+        "name": " TWIHULUMILE ",
+        "gpa": "2.9571 GRADE C (GOOD)",
+        "position": "799"
+    },
+    {
+        "name": " ONE WORLD ",
+        "gpa": "2.9653 GRADE C (GOOD)",
+        "position": "800"
+    },
+    {
+        "name": " ST. JOSEPH GIRLS' SEMINARY",
+        "gpa": "2.9667 GRADE C (GOOD)",
+        "position": "801"
+    },
+    {
+        "name": " BUPANDAGILA ",
+        "gpa": "2.9737 GRADE C (GOOD)",
+        "position": "802"
+    },
+    {
+        "name": " ITIPINGI ",
+        "gpa": "2.9756 GRADE C (GOOD)",
+        "position": "803"
+    },
+    {
+        "name": " IMAGE ",
+        "gpa": "2.9778 GRADE C (GOOD)",
+        "position": "804"
+    },
+    {
+        "name": " TAQWA ",
+        "gpa": "2.9797 GRADE C (GOOD)",
+        "position": "805"
+    },
+    {
+        "name": " LUGOBA ",
+        "gpa": "2.9829 GRADE C (GOOD)",
+        "position": "806"
+    },
+    {
+        "name": " LUSANGA ",
+        "gpa": "2.9847 GRADE C (GOOD)",
+        "position": "807"
+    },
+    {
+        "name": " ZANZIBAR UNIVERSITY HIGH SCHOOL",
+        "gpa": "2.9898 GRADE C (GOOD)",
+        "position": "808"
+    },
+    {
+        "name": " KISARIKA ",
+        "gpa": "2.9902 GRADE C (GOOD)",
+        "position": "809"
+    },
+    {
+        "name": " MPANDA GIRLS' ",
+        "gpa": "2.9932 GRADE C (GOOD)",
+        "position": "810"
+    },
+    {
+        "name": " DODOMA CENTRAL ",
+        "gpa": "3.0000 GRADE D (AVERAGE)",
+        "position": "811"
+    },
+    {
+        "name": " MATOLA ",
+        "gpa": "3.0000 GRADE D (AVERAGE)",
+        "position": "812"
+    },
+    {
+        "name": " OVERLAND ",
+        "gpa": "3.0000 GRADE D (AVERAGE)",
+        "position": "813"
+    },
+    {
+        "name": " BEST VIEW ACADEMY ",
+        "gpa": "3.0000 GRADE D (AVERAGE)",
+        "position": "814"
+    },
+    {
+        "name": " MAJENGO ",
+        "gpa": "3.0042 GRADE D (AVERAGE)",
+        "position": "815"
+    },
+    {
+        "name": " KAGEMU ",
+        "gpa": "3.0049 GRADE D (AVERAGE)",
+        "position": "816"
+    },
+    {
+        "name": " LUGUFU GIRLS' ",
+        "gpa": "3.0066 GRADE D (AVERAGE)",
+        "position": "817"
+    },
+    {
+        "name": " ANNAGAMAZO ",
+        "gpa": "3.0078 GRADE D (AVERAGE)",
+        "position": "818"
+    },
+    {
+        "name": " LONGIDO ",
+        "gpa": "3.0098 GRADE D (AVERAGE)",
+        "position": "819"
+    },
+    {
+        "name": " ALFAGEMS ",
+        "gpa": "3.0131 GRADE D (AVERAGE)",
+        "position": "820"
+    },
+    {
+        "name": " AL-KHEIR ISLAMIC GIRLS' SEMINARY",
+        "gpa": "3.0143 GRADE D (AVERAGE)",
+        "position": "821"
+    },
+    {
+        "name": " EFFORTS ",
+        "gpa": "3.0175 GRADE D (AVERAGE)",
+        "position": "822"
+    },
+    {
+        "name": " YEMEN ",
+        "gpa": "3.0215 GRADE D (AVERAGE)",
+        "position": "823"
+    },
+    {
+        "name": " AZANIA ",
+        "gpa": "3.0222 GRADE D (AVERAGE)",
+        "position": "824"
+    },
+    {
+        "name": " NDYUDA ",
+        "gpa": "3.0222 GRADE D (AVERAGE)",
+        "position": "825"
+    },
+    {
+        "name": " FARAJA SIHA SEMINARY",
+        "gpa": "3.0270 GRADE D (AVERAGE)",
+        "position": "826"
+    },
+    {
+        "name": " SIMBA WA YUDA ",
+        "gpa": "3.0272 GRADE D (AVERAGE)",
+        "position": "827"
+    },
+    {
+        "name": " ST.JOSEPH-KILOCHA SEMINARY",
+        "gpa": "3.0278 GRADE D (AVERAGE)",
+        "position": "828"
+    },
+    {
+        "name": " JENISTER MHAGAMA ",
+        "gpa": "3.0285 GRADE D (AVERAGE)",
+        "position": "829"
+    },
+    {
+        "name": " LUPEMBE ",
+        "gpa": "3.0299 GRADE D (AVERAGE)",
+        "position": "830"
+    },
+    {
+        "name": " MWENYEHERI ANUARITE ",
+        "gpa": "3.0345 GRADE D (AVERAGE)",
+        "position": "831"
+    },
+    {
+        "name": " HAMAMNI ",
+        "gpa": "3.0406 GRADE D (AVERAGE)",
+        "position": "832"
+    },
+    {
+        "name": " MPENDAE ",
+        "gpa": "3.0423 GRADE D (AVERAGE)",
+        "position": "833"
+    },
+    {
+        "name": " EDMUND-RICE-SINON ",
+        "gpa": "3.0472 GRADE D (AVERAGE)",
+        "position": "834"
+    },
+    {
+        "name": " AL-FAROUQ SEMINARY",
+        "gpa": "3.0513 GRADE D (AVERAGE)",
+        "position": "835"
+    },
+    {
+        "name": " RUSUMO ",
+        "gpa": "3.0588 GRADE D (AVERAGE)",
+        "position": "836"
+    },
+    {
+        "name": " ST. AMEDEUS ",
+        "gpa": "3.0606 GRADE D (AVERAGE)",
+        "position": "837"
+    },
+    {
+        "name": " PAMBA ",
+        "gpa": "3.0613 GRADE D (AVERAGE)",
+        "position": "838"
+    },
+    {
+        "name": " MBALAMAZIWA ",
+        "gpa": "3.0629 GRADE D (AVERAGE)",
+        "position": "839"
+    },
+    {
+        "name": " NAMUPA SEMINARY",
+        "gpa": "3.0714 GRADE D (AVERAGE)",
+        "position": "840"
+    },
+    {
+        "name": " MANGUANJUKI ",
+        "gpa": "3.0741 GRADE D (AVERAGE)",
+        "position": "841"
+    },
+    {
+        "name": " CHIEF DODO DAY ",
+        "gpa": "3.0813 GRADE D (AVERAGE)",
+        "position": "842"
+    },
+    {
+        "name": " KABANGA ",
+        "gpa": "3.0919 GRADE D (AVERAGE)",
+        "position": "843"
+    },
+    {
+        "name": " LANGASANI ",
+        "gpa": "3.0941 GRADE D (AVERAGE)",
+        "position": "844"
+    },
+    {
+        "name": " ST. MATTHEW'S ",
+        "gpa": "3.0950 GRADE D (AVERAGE)",
+        "position": "845"
+    },
+    {
+        "name": " MUHEZA HIGH SCHOOL",
+        "gpa": "3.0998 GRADE D (AVERAGE)",
+        "position": "846"
+    },
+    {
+        "name": " TUMATI ",
+        "gpa": "3.1009 GRADE D (AVERAGE)",
+        "position": "847"
+    },
+    {
+        "name": " CHIKANAMLILO ",
+        "gpa": "3.1034 GRADE D (AVERAGE)",
+        "position": "848"
+    },
+    {
+        "name": " MTWANGO ",
+        "gpa": "3.1068 GRADE D (AVERAGE)",
+        "position": "849"
+    },
+    {
+        "name": " IFAKARA ",
+        "gpa": "3.1174 GRADE D (AVERAGE)",
+        "position": "850"
+    },
+    {
+        "name": " KAMENE ",
+        "gpa": "3.1222 GRADE D (AVERAGE)",
+        "position": "851"
+    },
+    {
+        "name": " UTAANI ",
+        "gpa": "3.1270 GRADE D (AVERAGE)",
+        "position": "852"
+    },
+    {
+        "name": " MAHIWA ",
+        "gpa": "3.1332 GRADE D (AVERAGE)",
+        "position": "853"
+    },
+    {
+        "name": " BENJAMIN WILLIAM MKAPA HIGH SCHOOL",
+        "gpa": "3.1348 GRADE D (AVERAGE)",
+        "position": "854"
+    },
+    {
+        "name": " JITEGEMEE ",
+        "gpa": "3.1419 GRADE D (AVERAGE)",
+        "position": "855"
+    },
+    {
+        "name": " TONGANI ",
+        "gpa": "3.1630 GRADE D (AVERAGE)",
+        "position": "856"
+    },
+    {
+        "name": " JOKATE MWEGELO ",
+        "gpa": "3.1641 GRADE D (AVERAGE)",
+        "position": "857"
+    },
+    {
+        "name": " MONDO ",
+        "gpa": "3.1642 GRADE D (AVERAGE)",
+        "position": "858"
+    },
+    {
+        "name": " USA SEMINARY",
+        "gpa": "3.1667 GRADE D (AVERAGE)",
+        "position": "859"
+    },
+    {
+        "name": " ROHILA ",
+        "gpa": "3.1667 GRADE D (AVERAGE)",
+        "position": "860"
+    },
+    {
+        "name": " BONDENI ",
+        "gpa": "3.1930 GRADE D (AVERAGE)",
+        "position": "861"
+    },
+    {
+        "name": " SHAABAN ROBERT ",
+        "gpa": "3.1974 GRADE D (AVERAGE)",
+        "position": "862"
+    },
+    {
+        "name": " KIBO ",
+        "gpa": "3.2000 GRADE D (AVERAGE)",
+        "position": "863"
+    },
+    {
+        "name": " DR. JOHN POMBE MAGUFULI (U) ",
+        "gpa": "3.2005 GRADE D (AVERAGE)",
+        "position": "864"
+    },
+    {
+        "name": " SANJE ",
+        "gpa": "3.2040 GRADE D (AVERAGE)",
+        "position": "865"
+    },
+    {
+        "name": " AFRICAN TABATA HIGH SCHOOL",
+        "gpa": "3.2083 GRADE D (AVERAGE)",
+        "position": "866"
+    },
+    {
+        "name": " ST. LUISE MBINGA GIRLS' ",
+        "gpa": "3.2121 GRADE D (AVERAGE)",
+        "position": "867"
+    },
+    {
+        "name": " DKT AMANI A KARUME ",
+        "gpa": "3.2167 GRADE D (AVERAGE)",
+        "position": "868"
+    },
+    {
+        "name": " LIKONDE SEMINARY",
+        "gpa": "3.2222 GRADE D (AVERAGE)",
+        "position": "869"
+    },
+    {
+        "name": " SUMA ENGIKARETH ",
+        "gpa": "3.2222 GRADE D (AVERAGE)",
+        "position": "870"
+    },
+    {
+        "name": " LIVINGSTONE BOYS' ",
+        "gpa": "3.2292 GRADE D (AVERAGE)",
+        "position": "871"
+    },
+    {
+        "name": " MKUU ",
+        "gpa": "3.2308 GRADE D (AVERAGE)",
+        "position": "872"
+    },
+    {
+        "name": " KANDOTO SAYANSI GIRLS ",
+        "gpa": "3.2333 GRADE D (AVERAGE)",
+        "position": "873"
+    },
+    {
+        "name": " UYUI ",
+        "gpa": "3.2482 GRADE D (AVERAGE)",
+        "position": "874"
+    },
+    {
+        "name": " BRAVO ",
+        "gpa": "3.2500 GRADE D (AVERAGE)",
+        "position": "875"
+    },
+    {
+        "name": " KIBOSHO GIRLS' ",
+        "gpa": "3.2604 GRADE D (AVERAGE)",
+        "position": "876"
+    },
+    {
+        "name": " NYANTAKARA ",
+        "gpa": "3.2642 GRADE D (AVERAGE)",
+        "position": "877"
+    },
+    {
+        "name": " KUNDUCHI GIRLS' ISLAMIC HIGH SCHOOL",
+        "gpa": "3.2701 GRADE D (AVERAGE)",
+        "position": "878"
+    },
+    {
+        "name": " MARIST BOYS ",
+        "gpa": "3.2727 GRADE D (AVERAGE)",
+        "position": "879"
+    },
+    {
+        "name": " HARVEST MISSION ",
+        "gpa": "3.2745 GRADE D (AVERAGE)",
+        "position": "880"
+    },
+    {
+        "name": " BUKOBA ",
+        "gpa": "3.2778 GRADE D (AVERAGE)",
+        "position": "881"
+    },
+    {
+        "name": " TAMBAZA ",
+        "gpa": "3.2818 GRADE D (AVERAGE)",
+        "position": "882"
+    },
+    {
+        "name": " KISOMACHI ",
+        "gpa": "3.2821 GRADE D (AVERAGE)",
+        "position": "883"
+    },
+    {
+        "name": " LWANDAI ",
+        "gpa": "3.2917 GRADE D (AVERAGE)",
+        "position": "884"
+    },
+    {
+        "name": " AGAPE MBAGALA ",
+        "gpa": "3.2917 GRADE D (AVERAGE)",
+        "position": "885"
+    },
+    {
+        "name": " JANGWANI ",
+        "gpa": "3.2920 GRADE D (AVERAGE)",
+        "position": "886"
+    },
+    {
+        "name": " DONBOSCO-DIDIA ",
+        "gpa": "3.2971 GRADE D (AVERAGE)",
+        "position": "887"
+    },
+    {
+        "name": " BULUBA ",
+        "gpa": "3.2981 GRADE D (AVERAGE)",
+        "position": "888"
+    },
+    {
+        "name": " ORKEESWA ",
+        "gpa": "3.3000 GRADE D (AVERAGE)",
+        "position": "889"
+    },
+    {
+        "name": " CONSOLATA SEMINARY",
+        "gpa": "3.3043 GRADE D (AVERAGE)",
+        "position": "890"
+    },
+    {
+        "name": " FLORIAN ",
+        "gpa": "3.3183 GRADE D (AVERAGE)",
+        "position": "891"
+    },
+    {
+        "name": " KINONDONI ",
+        "gpa": "3.3203 GRADE D (AVERAGE)",
+        "position": "892"
+    },
+    {
+        "name": " KO'SIRYAMU ",
+        "gpa": "3.3333 GRADE D (AVERAGE)",
+        "position": "893"
+    },
+    {
+        "name": " GREEN LANE ",
+        "gpa": "3.3333 GRADE D (AVERAGE)",
+        "position": "894"
+    },
+    {
+        "name": " KIFAI MODERN ",
+        "gpa": "3.3438 GRADE D (AVERAGE)",
+        "position": "895"
+    },
+    {
+        "name": " BEN BELLA ",
+        "gpa": "3.3476 GRADE D (AVERAGE)",
+        "position": "896"
+    },
+    {
+        "name": " WINNING SPIRIT ",
+        "gpa": "3.4074 GRADE D (AVERAGE)",
+        "position": "897"
+    },
+    {
+        "name": " PERAMIHO GIRLS' ",
+        "gpa": "3.4167 GRADE D (AVERAGE)",
+        "position": "898"
+    },
+    {
+        "name": " KWARARA ",
+        "gpa": "3.4389 GRADE D (AVERAGE)",
+        "position": "899"
+    },
+    {
+        "name": " KIEMBESAMAKI 'A' ISLAMIC ",
+        "gpa": "3.4544 GRADE D (AVERAGE)",
+        "position": "900"
+    },
+    {
+        "name": " DKT SALMINI AMOUR JUMA ",
+        "gpa": "3.4567 GRADE D (AVERAGE)",
+        "position": "901"
+    },
+    {
+        "name": " NELSON-MANDELA ",
+        "gpa": "3.4578 GRADE D (AVERAGE)",
+        "position": "902"
+    },
+    {
+        "name": " NYANZA ADVENTIST ",
+        "gpa": "3.4583 GRADE D (AVERAGE)",
+        "position": "903"
+    },
+    {
+        "name": " KALENGE ",
+        "gpa": "3.4964 GRADE D (AVERAGE)",
+        "position": "904"
+    },
+    {
+        "name": " GLORIOUS ",
+        "gpa": "3.5524 GRADE D (AVERAGE)",
+        "position": "905"
+    },
+    {
+        "name": " HAILE SELASSIE ",
+        "gpa": "3.5623 GRADE D (AVERAGE)",
+        "position": "906"
+    },
+    {
+        "name": " SHINYANGA TEACHERS COLLEGE",
+        "gpa": "3.5650 GRADE D (AVERAGE)",
+        "position": "907"
+    },
+    {
+        "name": " DEBRABANT ",
+        "gpa": "3.5758 GRADE D (AVERAGE)",
+        "position": "908"
+    },
+    {
+        "name": " GREEN ACRES ",
+        "gpa": "3.5833 GRADE D (AVERAGE)",
+        "position": "909"
+    },
+    {
+        "name": " AL-RIYAMI ACADEMY ",
+        "gpa": "3.5889 GRADE D (AVERAGE)",
+        "position": "910"
+    },
+    {
+        "name": " MWITANI HIGH SCHOOL",
+        "gpa": "3.5952 GRADE D (AVERAGE)",
+        "position": "911"
+    },
+    {
+        "name": " KASITA SEMINARY",
+        "gpa": "3.6019 GRADE D (AVERAGE)",
+        "position": "912"
+    },
+    {
+        "name": " ECKERNFORDE ",
+        "gpa": "3.6667 GRADE D (AVERAGE)",
+        "position": "913"
+    },
+    {
+        "name": " LYCEUM ",
+        "gpa": "3.6821 GRADE D (AVERAGE)",
+        "position": "914"
+    },
+    {
+        "name": " TUMEKUJA ",
+        "gpa": "3.7002 GRADE D (AVERAGE)",
+        "position": "915"
+    },
+    {
+        "name": " KLERRUU TEACHERS' COLLEGE",
+        "gpa": "3.7149 GRADE D (AVERAGE)",
+        "position": "916"
+    },
+    {
+        "name": " SONGEA TEACHERS' COLLEGE",
+        "gpa": "3.7348 GRADE D (AVERAGE)",
+        "position": "917"
+    },
+    {
+        "name": " PIUS ",
+        "gpa": "3.7381 GRADE D (AVERAGE)",
+        "position": "918"
+    },
+    {
+        "name": " BUKIMAU ",
+        "gpa": "3.7414 GRADE D (AVERAGE)",
+        "position": "919"
+    },
+    {
+        "name": " KOROGWE TEACHERS' COLLEGE",
+        "gpa": "3.7607 GRADE D (AVERAGE)",
+        "position": "920"
+    },
+    {
+        "name": " BUTIMBA TEACHERS' COLLEGE",
+        "gpa": "3.9241 GRADE D (AVERAGE)",
+        "position": "921"
+    },
+    {
+        "name": " MANDAKA TEACHER'S COLLEGE",
+        "gpa": "4.0021 GRADE E (SATISFACTORY)",
+        "position": "922"
+    },
+    {
+        "name": " TUKUYU TEACHERS' COLLEGE",
+        "gpa": "4.0302 GRADE E (SATISFACTORY)",
+        "position": "923"
+    },
+    {
+        "name": " MOROGORO TEACHERS' COLLEGE",
+        "gpa": "4.1117 GRADE E (SATISFACTORY)",
+        "position": "924"
+    },
+    {
+        "name": " ISLAMIYA ",
+        "gpa": "4.1667 GRADE E (SATISFACTORY)",
+        "position": "925"
+    },
+    {
+        "name": " KASULU TEACHERS' COLLEGE",
+        "gpa": "4.1688 GRADE E (SATISFACTORY)",
+        "position": "926"
+    },
+    {
+        "name": " TABORA TEACHERS' COLLEGE",
+        "gpa": "4.2895 GRADE E (SATISFACTORY)",
+        "position": "927"
+    },
+    {
+        "name": " MONDULI TEACHERS' COLLEGE",
+        "gpa": "4.4392 GRADE E (SATISFACTORY)",
+        "position": "928"
+    },
+    {
+        "name": " MPWAPWA TEACHERS' COLLEGE",
+        "gpa": "4.4600 GRADE E (SATISFACTORY)",
+        "position": "929"
+    }
+];
+function filterArrayByKeyValue(array, key, value) {
+  value = value.toLowerCase();
+  return array.filter(function(obj) {
+    var objValue = obj[key].toLowerCase();
+    return objValue.includes(value);
+  });
+}
+
+function displayFilteredList(array) {
+  var tableBody = document.querySelector('#listContainer tbody');
+  tableBody.innerHTML = ''; // Clear existing rows
+
+  array.forEach(function(obj) {
+    var row = document.createElement('tr');
+    var nameCell = document.createElement('td');
+    var gpaCell = document.createElement('td');
+    var posCell = document.createElement('td');
+
+    nameCell.textContent = obj.name;
+    gpaCell.textContent = obj.gpa;
+    posCell.textContent = obj.position;
+
+    row.appendChild(nameCell);
+    row.appendChild(posCell);
+    row.appendChild(gpaCell);
+    tableBody.appendChild(row);
+  });
+}
+
+displayFilteredList(dataArray);
+
+var filterInput = document.getElementById('search');
+filterInput.addEventListener('input', function() {
+  var filterValue = this.value;
+  var filteredArray = filterArrayByKeyValue(dataArray, 'name', filterValue);
+  displayFilteredList(filteredArray);
+});
+
+</script>
+</body>
+</html>
