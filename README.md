@@ -1,7 +1,6 @@
 - 👋 Hi, I’m @vincent-laizer
 - 👀 I’m interested in python programming
 - 💞️ I’m looking to collaborate on python, web development and android projects
-- 📫 How to reach me vglaizer09@gmail.com
 
 <!---
 vincent-laizer/vincent-laizer is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
